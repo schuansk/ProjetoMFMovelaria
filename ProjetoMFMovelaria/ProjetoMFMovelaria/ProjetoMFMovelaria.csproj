@@ -70,10 +70,20 @@
   <ItemGroup>
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="Pages\Test\ConnTestPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\Mapped.cs" />
+    <Compile Include="App_Code\Mapped.cs" />
+    <Compile Include="App_Code\Class\ConnTest.cs" />
+    <Compile Include="App_Code\Persistence\ConnTestDB.cs" />
+    <Compile Include="Pages\Test\ConnTestPage.aspx.cs">
+      <DependentUpon>ConnTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Test\ConnTestPage.aspx.designer.cs">
+      <DependentUpon>ConnTestPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,10 +96,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\Class\" />
-    <Folder Include="App_Code\Persistence\" />
     <Folder Include="App_Code\Util\" />
-    <Folder Include="Pages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
