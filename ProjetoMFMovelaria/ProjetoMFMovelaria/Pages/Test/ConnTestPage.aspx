@@ -4,23 +4,25 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Teste de conexão</title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
-        <asp:Label ID="Label1" runat="server" Text="Cadastro de teste de conexão"></asp:Label>
+    <div class="ml-4 mt-4">
+<form id="form1" runat="server">
+        <asp:Label ID="Label1" runat="server" Text="Cadastro para teste de conexão"></asp:Label>
         <br />
         <br />
         <asp:Label ID="lblNome" runat="server" Text="Nome"></asp:Label>
         <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-        <asp:Button ID="btnSave" runat="server" OnClick="btnSave_Click" Text="Salvar" />
+        <asp:Button ID="btnSave" CssClass="btn btn-sm btn-success" runat="server" OnClick="btnSave_Click" Text="Salvar" />
         <br />
         <br />
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
         <br />
         <br />
-        <asp:Label ID="Label2" runat="server" Text="Se tudo deu certo, seu nome aparecera abaixo"></asp:Label>
-        :<br />
+        <asp:Label ID="Label2" runat="server" Text="Execute novamente o projeto e se tudo deu certo seu nome aparecera abaixo:"></asp:Label>
+        <br />
         <br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
             <Columns>
@@ -39,5 +41,11 @@
         <asp:Label ID="lblMessageList" runat="server"></asp:Label>
         <br />
     </form>
+    </div>
+    
+    
+    <!-- Importação do JS -->
+    <script src="../../Scripts/jquery-3.0.0.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
 </body>
 </html>
