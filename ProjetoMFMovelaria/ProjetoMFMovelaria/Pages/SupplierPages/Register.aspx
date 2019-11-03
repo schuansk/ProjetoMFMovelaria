@@ -17,7 +17,7 @@
                     <asp:Label ID="lblTitle" runat="server" Text="Cadastro de fornecedor"></asp:Label>
                 </h1>
                 <p class="text-center h1 text-white">
-                    <asp:HyperLink ID="hlkToList" CssClass="btn btn-info btn-sm" runat="server">Consultar fornecedores cadastrados</asp:HyperLink>
+                    <asp:HyperLink ID="hlkToList" CssClass="btn btn-info btn-sm" runat="server" NavigateUrl="~/Pages/SupplierPages/ToList.aspx">Consultar fornecedores cadastrados</asp:HyperLink>
                 </p>
                 <p class="h5 text-center text-success">
                     <asp:Label ID="lblMessage" runat="server"></asp:Label>
