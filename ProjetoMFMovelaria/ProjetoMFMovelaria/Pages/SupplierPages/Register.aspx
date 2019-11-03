@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Cadastro de forncedor</title>
+    <title>Cadastro de fornecedor</title>
     <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>

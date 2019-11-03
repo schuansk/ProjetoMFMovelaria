@@ -86,7 +86,7 @@ namespace ProjetoMFMovelaria.Pages.SupplierPages
 
                     if (supplierdb.Insert(supplier))
                     {
-                        int id = supplierdb.SelectLastSupplier();
+                        int id = Convert.ToInt32(supplierdb.SelectByCNPJ(txtCNPJ.Text).Id);
 
                         int count = Convert.ToInt32(cblNumber.Items.Count);
 

@@ -36,7 +36,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             return true;
         }
 
-        //RETORNA UM FORNCEDOR CASO ELE EXISTA, PESQUISA BASEADA NO CNPJ
+        //RETORNA UM FORNECEDOR CASO ELE EXISTA, PESQUISA BASEADA NO CNPJ
         public Supplier SelectByCNPJ(string cnpj)
         {
             Supplier obj = null;
@@ -47,9 +47,9 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
 
             objConn = Mapped.Connection();
 
-            objCommand = Mapped.Command("SELECT * FROM fornecedor WHERE for_cnpj = ?code", objConn);
+            objCommand = Mapped.Command("SELECT * FROM fornecedor WHERE for_cnpj = ?cnpj", objConn);
 
-            objCommand.Parameters.Add(Mapped.Parameter("?code", cnpj));
+            objCommand.Parameters.Add(Mapped.Parameter("?cnpj", cnpj));
 
             objDataReader = objCommand.ExecuteReader();
 
@@ -93,36 +93,6 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             objConn.Dispose();
 
             return ds;
-        }
-
-        //RETORNA O ÚLTIMO FORNCEDOR CADASTRADO
-        public int SelectLastSupplier()
-        {
-            int id = 0;
-
-            System.Data.IDbConnection objConn;
-            System.Data.IDbCommand objCommand;
-            System.Data.IDataReader objDataReader;
-
-            objConn = Mapped.Connection();
-
-            objCommand = Mapped.Command("SELECT for_id FROM fornecedor ORDER BY for_id DESC LIMIT 1;", objConn);
-
-            objDataReader = objCommand.ExecuteReader();
-
-            while (objDataReader.Read())
-            {
-                id = Convert.ToInt32(objDataReader["for_id"]);
-            }
-
-            objDataReader.Close();
-            objConn.Close();
-
-            objCommand.Dispose();
-            objConn.Dispose();
-            objDataReader.Dispose();
-
-            return id;
-        }
+        }        
     }
 }

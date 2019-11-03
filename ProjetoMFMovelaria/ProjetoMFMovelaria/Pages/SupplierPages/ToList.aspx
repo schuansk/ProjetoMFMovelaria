@@ -39,7 +39,7 @@
                                         <Columns>
                                             <asp:BoundField DataField="for_nome" HeaderText="Fornecedor" />
                                             <asp:BoundField DataField="for_cnpj" HeaderText="CNPJ" />
-                                            <asp:BoundField DataField="for_email" HeaderText="E-mail" />
+                                            <asp:BoundField DataField="for_email" HeaderText="Email" />
                                         </Columns>
                                     </asp:GridView>
                                 </div>
