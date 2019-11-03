@@ -83,6 +83,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Pages\SupplierPages\Register.aspx" />
     <Content Include="Pages\Test\ConnTestPage.aspx" />
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap-select.min.js" />
@@ -235,20 +236,35 @@
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\jquery.mask.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\project.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Class\PhoneNumber.cs" />
+    <Compile Include="App_Code\Class\Supplier.cs" />
     <Compile Include="App_Code\Mapped.cs" />
     <Compile Include="App_Code\Class\ConnTest.cs" />
     <Compile Include="App_Code\Persistence\ConnTestDB.cs" />
+    <Compile Include="App_Code\Persistence\PhoneNumberDB.cs" />
+    <Compile Include="App_Code\Persistence\SupplierDB.cs" />
+    <Compile Include="Pages\SupplierPages\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SupplierPages\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Test\ConnTestPage.aspx.cs">
       <DependentUpon>ConnTestPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
