@@ -240,6 +240,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Pages\StepPages\Register.aspx" />
     <Content Include="Pages\SupplierPages\Register.aspx" />
     <Content Include="Pages\SupplierPages\ToList.aspx" />
     <Content Include="Pages\Test\ConnTestPage.aspx" />
@@ -498,6 +499,13 @@
     <Compile Include="App_Code\Persistence\ConnTestDB.cs" />
     <Compile Include="App_Code\Persistence\PhoneNumberDB.cs" />
     <Compile Include="App_Code\Persistence\SupplierDB.cs" />
+    <Compile Include="Pages\StepPages\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\StepPages\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SupplierPages\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
