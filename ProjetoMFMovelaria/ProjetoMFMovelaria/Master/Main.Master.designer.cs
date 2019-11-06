@@ -7,45 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjetoMFMovelaria.Pages.SupplierPages {
+namespace ProjetoMFMovelaria.Master {
     
     
-    public partial class ToList {
+    public partial class Main {
         
         /// <summary>
-        /// lblTitle control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// hlkToList control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlkToList;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblMessage control.
+        /// hlkRegisterSupplier control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.HyperLink hlkRegisterSupplier;
         
         /// <summary>
-        /// gdvSupplier control.
+        /// hlkToListSupplier control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gdvSupplier;
+        protected global::System.Web.UI.WebControls.HyperLink hlkToListSupplier;
+        
+        /// <summary>
+        /// ContentPlaceHolder1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
     }
 }

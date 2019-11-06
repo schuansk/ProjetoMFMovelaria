@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="ProjetoMFMovelaria.Master.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%-- Arquivos CSS --%>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="../Content/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">MF Movelaria</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <%-- Dropdown itens que chamam as paginas --%>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user-tag"></i>Fornecedor
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <asp:HyperLink ID="hlkRegisterSupplier" CssClass="dropdown-item " runat="server" Text="Cadastrar fornecedor" NavigateUrl="~/Pages/SupplierPages/Register.aspx">
+                                    <i class="fas fa-plus-circle"></i> Cadastrar novo fornecedor
+                                </asp:HyperLink>
+                                <asp:HyperLink ID="hlkToListSupplier" CssClass="dropdown-item" runat="server" NavigateUrl="~/Pages/SupplierPages/ToList.aspx" Text="Listar fornecedores">
+                                    <i class="fas fa-list-alt"></i> Listar fornecedores
+                                </asp:HyperLink>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <%-- O Conteúdo do webform fica dentro do ContentPlaceHolder1 --%>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <%-- Arquivos JS --%>
+    <script src="../../Scripts/jquery-3.0.0.min.js"></script>
+    <%-- Import do FontAwesome, link externo --%>
+    <script src="https://kit.fontawesome.com/d158521d4b.js" crossorigin="anonymous"></script>
+    <script src="../../Scripts/jquery.mask.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="../../Scripts/DataTables/dataTables.buttons.min.js"></script>
+    <script src="../../Scripts/DataTables/buttons.flash.min.js"></script>
+    <script src="../../Scripts/DataTables/buttons.html5.min.js"></script>
+    <script src="../../Scripts/DataTables/buttons.colVis.min.js"></script>
+    <script src="../../Scripts/jszip.min.js"></script>
+    <script src="../../Scripts/pdfmake.min.js"></script>
+    <script src="../../Scripts/vfs_fonts.js"></script>
+    <script src="../../Scripts/project.js"></script>
+</body>
+</html>

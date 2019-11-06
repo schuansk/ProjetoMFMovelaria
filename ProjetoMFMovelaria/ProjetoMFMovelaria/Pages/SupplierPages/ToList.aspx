@@ -1,17 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ToList.aspx.cs" Inherits="ProjetoMFMovelaria.Pages.SupplierPages.ToList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ToList.aspx.cs"
+    Inherits="ProjetoMFMovelaria.Pages.SupplierPages.ToList" Title="" MasterPageFile="~/Master/Main.Master" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Listar fornecedores</title>
-    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../../Content/font-awesome.min.css" rel="stylesheet" />
-    <link href="../../Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
-    <link href="../../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="../../Content/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
-</head>
-<body>
+<asp:Content ID="Contant2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mt-4 mb-4">
         <!-- Row: Cabeçalho -->
         <div class="row">
@@ -30,37 +23,23 @@
         <!-- Row: Conteúdo -->
         <div class="row">
             <div class="col">
-                <form id="form1" runat="server">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="table-responsive">
-                                    <asp:GridView ID="gdvSupplier" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False">
-                                        <Columns>
-                                            <asp:BoundField DataField="for_nome" HeaderText="Fornecedor" />
-                                            <asp:BoundField DataField="for_cnpj" HeaderText="CNPJ" />
-                                            <asp:BoundField DataField="for_email" HeaderText="Email" />
-                                        </Columns>
-                                    </asp:GridView>
-                                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <asp:GridView ID="gdvSupplier" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False">
+                                    <Columns>
+                                        <asp:BoundField DataField="for_nome" HeaderText="Fornecedor" />
+                                        <asp:BoundField DataField="for_cnpj" HeaderText="CNPJ" />
+                                        <asp:BoundField DataField="for_email" HeaderText="Email" />
+                                    </Columns>
+                                </asp:GridView>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
+</asp:Content>
 
-    <script src="../../Scripts/jquery-3.0.0.min.js"></script>
-    <script src="../../Scripts/bootstrap.min.js"></script>
-    <script src="../../Scripts/DataTables/jquery.dataTables.min.js"></script>
-    <script src="../../Scripts/DataTables/dataTables.buttons.min.js"></script>
-    <script src="../../Scripts/DataTables/buttons.flash.min.js"></script>
-    <script src="../../Scripts/DataTables/buttons.html5.min.js"></script>
-    <script src="../../Scripts/DataTables/buttons.colVis.min.js"></script>
-    <script src="../../Scripts/jszip.min.js"></script>
-    <script src="../../Scripts/pdfmake.min.js"></script>
-    <script src="../../Scripts/vfs_fonts.js"></script>
-    <script src="../../Scripts/project.js"></script>
-</body>
-</html>

@@ -468,6 +468,7 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Master\Main.Master" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\i18n\defaults-zh_TW.min.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -503,6 +504,13 @@
     <Compile Include="App_Code\Persistence\PhoneNumberDB.cs" />
     <Compile Include="App_Code\Persistence\StepBD.cs" />
     <Compile Include="App_Code\Persistence\SupplierDB.cs" />
+    <Compile Include="Master\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
     <Compile Include="Pages\StepPages\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
