@@ -38,7 +38,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
         }
 
         //RETORNA UMA ETAPA CASO ELA EXISTA, PESQUISA BASEADA NO ID ETAPA
-        public Step SelectById(string id)
+        public Step SelectById(int id)
         {
             Step obj = null;
 

@@ -37,7 +37,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
         }
 
         //RETORNA UM ORCAMENTO CASO ELE EXISTA, PESQUISA BASEADA NO ORC_ID
-        public Budget SelectById(string id)
+        public Budget SelectById(int id)
         {
             Budget obj = null;
 
@@ -56,6 +56,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             while (objDataReader.Read())
             {
                 obj = new Budget();
+                obj.Id = Convert.ToInt32(objDataReader["orc_id"]);
                 obj.StartDate = Convert.ToDateTime(objDataReader["orc_data_inicio"]);
                 obj.Email = Convert.ToString(objDataReader["orc_email"]);
                 obj.TotalBudget = Convert.ToDouble(objDataReader["orc_total_orcamento"]);

@@ -492,12 +492,16 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Class\Budget.cs" />
     <Compile Include="App_Code\Class\PhoneNumber.cs" />
+    <Compile Include="App_Code\Class\Step.cs" />
     <Compile Include="App_Code\Class\Supplier.cs" />
     <Compile Include="App_Code\Mapped.cs" />
     <Compile Include="App_Code\Class\ConnTest.cs" />
+    <Compile Include="App_Code\Persistence\BudgetBD.cs" />
     <Compile Include="App_Code\Persistence\ConnTestDB.cs" />
     <Compile Include="App_Code\Persistence\PhoneNumberDB.cs" />
+    <Compile Include="App_Code\Persistence\StepBD.cs" />
     <Compile Include="App_Code\Persistence\SupplierDB.cs" />
     <Compile Include="Pages\StepPages\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
