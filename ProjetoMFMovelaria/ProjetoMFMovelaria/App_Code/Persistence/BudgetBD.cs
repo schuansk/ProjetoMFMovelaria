@@ -95,5 +95,23 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
 
             return ds;
         }
+
+        //ALTERA O STATUS DO ORCAMENTO ENTRE ATIVO E INATIVO
+        public bool UpdateBudget(Budget budget)
+        {
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("UPDATE orcamento SET orc_ativo = '0' WHERE orc_id = '" + budget.Id + "'", objConexao);
+            objCommand.ExecuteNonQuery();
+
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+
+            return true;
+        }
+
     }
 }

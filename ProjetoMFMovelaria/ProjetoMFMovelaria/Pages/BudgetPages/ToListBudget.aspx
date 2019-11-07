@@ -19,6 +19,9 @@
                 <h1 class="text-center h1">
                     <asp:Label ID="lblTitle" runat="server" Text="Orçamentos cadastrados"></asp:Label>
                 </h1>
+                <p class="text-center h5">
+                    <asp:Label ID="lblStatus" runat="server" Enabled="False" ForeColor="#666666" Text="Status True: Orçamento ativo || Status False: Orçamento cancelado" Visible="True"></asp:Label>
+                </p>
                 <p class="text-center h4">
                     <asp:Label ID="lblMessage" runat="server" Enabled="False" ForeColor="#666666" Text="Não há orçamentos para listar" Visible="False"></asp:Label>
                 </p>
@@ -32,20 +35,25 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="table-responsive">
-                                    <asp:GridView ID="gdvBudget" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False">
+                                    <asp:GridView ID="gdvBudget" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False" OnRowCommand="gdvOrc_RowCommand" >
                                         <Columns>
-                                            <asp:BoundField DataField="orc_email" HeaderText="Email" />
-                                            <asp:BoundField DataField="orc_data_inicio" HeaderText="Data de inicio" />
+                                            <asp:BoundField DataField="orc_id" HeaderText="ID" />
+                                            <asp:BoundField DataField="orc_data_inicio" HeaderText="Data de início" />
+                                            <asp:BoundField DataField="orc_email" HeaderText="E-mail do cliente" />
+                                            <asp:BoundField DataField="orc_total_orcamento" HeaderText="Valor total" />
+                                            <asp:BoundField DataField="fun_id" HeaderText="Funcionário" />
+                                            <asp:BoundField DataField="orc_ativo" HeaderText="Status" />
                                             <asp:TemplateField>
                                                  <ItemTemplate>
                                                  <asp:LinkButton ID="btnEtapa" runat="server" CommandName="Etapa"
                                                 CommandArgument='<%# Bind("orc_id")%>'>Etapa</asp:LinkButton>
                                                  </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Cancelar orçamento">
                                                  <ItemTemplate>
-                                                 <asp:LinkButton ID="btnCancelar" runat="server" CommandName="Cancelar"
-                                                CommandArgument='<%# Bind("orc_id")%>'>Cancelar</asp:LinkButton>
+                                                 <asp:Button ID="statSwitch" runat="server" Text="Cancelar" 
+                                                CommandName="Cancelar" CommandArgument='<%# Container.DataItemIndex %>'
+                                                OnClientClick="return confirm('Clique em OK apenas se tiver certeza de que deseja desativar este orcamento. Do contrario, clique em CANCELAR.');" />
                                                  </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
