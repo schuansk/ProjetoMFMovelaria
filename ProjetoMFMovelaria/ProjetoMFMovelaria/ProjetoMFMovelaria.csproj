@@ -240,6 +240,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Pages\BudgetPages\ToListBudget.aspx" />
     <Content Include="Pages\StepPages\Register.aspx" />
     <Content Include="Pages\SupplierPages\Register.aspx" />
     <Content Include="Pages\SupplierPages\ToList.aspx" />
@@ -510,6 +511,13 @@
     </Compile>
     <Compile Include="Master\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BudgetPages\ToListBudget.aspx.cs">
+      <DependentUpon>ToListBudget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BudgetPages\ToListBudget.aspx.designer.cs">
+      <DependentUpon>ToListBudget.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\StepPages\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
