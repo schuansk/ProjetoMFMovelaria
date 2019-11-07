@@ -48,8 +48,8 @@
                                 <asp:Label ID="lblCliente" runat="server" Text="pessoa@pessoa.com"></asp:Label>
                             </div>
                             <div class="row">
-                                <asp:Label ID="Label6" runat="server" Text="Etapa atual:"></asp:Label>
-                                <asp:Label ID="lblEtapaAtual" runat="server" Text="Projeto"></asp:Label>
+                                <asp:Label ID="Label6" runat="server" Text="Etapa atual:" style="visibility:hidden;"></asp:Label>
+                                <asp:Label ID="lblEtapaAtual" runat="server" Text="Projeto" style="visibility: hidden;"></asp:Label>
                             </div>
                             <br />
                             <br />

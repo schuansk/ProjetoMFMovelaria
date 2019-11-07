@@ -12,5 +12,6 @@ namespace ProjetoMFMovelaria.App_Code.Class
         public string Email { get; set; }
         public double TotalBudget { get; set; }
         public bool Active { get; set; }
+        public string NameEmployee { get; set; }
     }
 }

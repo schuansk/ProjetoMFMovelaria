@@ -47,7 +47,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
 
             objConn = Mapped.Connection();
 
-            objCommand = Mapped.Command("SELECT * FROM orcamento WHERE orc_id = ?id", objConn);
+            objCommand = Mapped.Command("SELECT * FROM orcamento orc JOIN funcionario fun on fun.fun_id = orc.fun_id WHERE orc.orc_id = ?id", objConn);
 
             objCommand.Parameters.Add(Mapped.Parameter("?id", id));
 
@@ -61,6 +61,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
                 obj.Email = Convert.ToString(objDataReader["orc_email"]);
                 obj.TotalBudget = Convert.ToDouble(objDataReader["orc_total_orcamento"]);
                 obj.Active = Convert.ToBoolean(objDataReader["orc_ativo"]);
+                obj.NameEmployee = Convert.ToString(objDataReader["fun_nome"]);
             }
 
             objDataReader.Close();

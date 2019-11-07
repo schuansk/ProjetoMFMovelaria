@@ -32,6 +32,7 @@ namespace ProjetoMFMovelaria.Pages.StepPages
                 lblDataInicio.Text = budget.StartDate.ToString();
                 lblTotal.Text = budget.TotalBudget.ToString();
                 lblCliente.Text = budget.Email.ToString();
+                lblResponsavel.Text = budget.NameEmployee.ToString();
             }
             else
             {
