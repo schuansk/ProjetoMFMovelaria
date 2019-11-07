@@ -240,10 +240,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-<<<<<<< Updated upstream
     <Content Include="Pages\BudgetPages\ToListBudget.aspx" />
-=======
->>>>>>> Stashed changes
     <Content Include="Pages\RequestItemPages\ToList.aspx" />
     <Content Include="Pages\StepPages\Register.aspx" />
     <Content Include="Pages\SupplierPages\Register.aspx" />
@@ -518,7 +515,6 @@
     <Compile Include="Master\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
     <Compile Include="Pages\BudgetPages\ToListBudget.aspx.cs">
       <DependentUpon>ToListBudget.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -526,8 +522,6 @@
     <Compile Include="Pages\BudgetPages\ToListBudget.aspx.designer.cs">
       <DependentUpon>ToListBudget.aspx</DependentUpon>
     </Compile>
-=======
->>>>>>> Stashed changes
     <Compile Include="Pages\RequestItemPages\ToList.aspx.cs">
       <DependentUpon>ToList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -620,17 +614,4 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
