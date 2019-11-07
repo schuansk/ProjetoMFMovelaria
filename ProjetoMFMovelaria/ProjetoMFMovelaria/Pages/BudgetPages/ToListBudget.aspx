@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ToListBudget.aspx.cs" Inherits="ProjetoMFMovelaria.Pages.BudgetPages.ToListBudget" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ToListBudget.aspx.cs"
+    Inherits="ProjetoMFMovelaria.Pages.BudgetPages.ToListBudget" Title="" MasterPageFile="~/Master/Main.Master" %>
 
-<!DOCTYPE html>
+<%--<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -12,6 +13,12 @@
     <link href="../../Content/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
 </head>
 <body>
+    <form id="form1" runat="server">--%>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mt-4 mb-4">
         <!-- Row: Cabeçalho -->
         <div class="row">
@@ -30,42 +37,46 @@
         <!-- Row: Conteúdo -->
         <div class="row">
             <div class="col">
-                <form id="form1" runat="server">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="table-responsive">
-                                    <asp:GridView ID="gdvBudget" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False" OnRowCommand="gdvOrc_RowCommand" >
-                                        <Columns>
-                                            <asp:BoundField DataField="orc_id" HeaderText="ID" />
-                                            <asp:BoundField DataField="orc_data_inicio" HeaderText="Data de início" />
-                                            <asp:BoundField DataField="orc_email" HeaderText="E-mail do cliente" />
-                                            <asp:BoundField DataField="orc_total_orcamento" HeaderText="Valor total" />
-                                            <asp:BoundField DataField="fun_id" HeaderText="Funcionário" />
-                                            <asp:BoundField DataField="orc_ativo" HeaderText="Status" />
-                                            <asp:TemplateField>
-                                                 <ItemTemplate>
-                                                 <asp:LinkButton ID="btnEtapa" runat="server" CommandName="Etapa"
-                                                CommandArgument='<%# Bind("orc_id")%>'>Etapa</asp:LinkButton>
-                                                 </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Cancelar orçamento">
-                                                 <ItemTemplate>
-                                                 <asp:Button ID="statSwitch" runat="server" Text="Cancelar" 
-                                                CommandName="Cancelar" CommandArgument='<%# Container.DataItemIndex %>'
-                                                OnClientClick="return confirm('Clique em OK apenas se tiver certeza de que deseja desativar este orcamento. Do contrario, clique em CANCELAR.');" />
-                                                 </ItemTemplate>
-                                            </asp:TemplateField>
-                                        </Columns>
-                                    </asp:GridView>
-                                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <asp:GridView ID="gdvBudget" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False" OnRowCommand="gdvOrc_RowCommand">
+                                    <Columns>
+                                        <asp:BoundField DataField="orc_id" HeaderText="ID" />
+                                        <asp:BoundField DataField="orc_data_inicio" HeaderText="Data de início" />
+                                        <asp:BoundField DataField="orc_email" HeaderText="E-mail do cliente" />
+                                        <asp:BoundField DataField="orc_total_orcamento" HeaderText="Valor total" />
+                                        <asp:BoundField DataField="fun_id" HeaderText="Funcionário" />
+                                        <asp:BoundField DataField="orc_ativo" HeaderText="Status" />
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="btnEtapa" runat="server" CommandName="Etapa"
+                                                    CommandArgument='<%# Bind("orc_id")%>'>Etapa</asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Cancelar orçamento">
+                                            <ItemTemplate>
+                                                <asp:Button ID="statSwitch" runat="server" Text="Cancelar"
+                                                    CommandName="Cancelar" CommandArgument='<%# Container.DataItemIndex %>'
+                                                    OnClientClick="return confirm('Clique em OK apenas se tiver certeza de que deseja desativar este orcamento. Do contrario, clique em CANCELAR.');" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
+</asp:Content>
+
+
+<%-- </form>
+
 
     <script src="../../Scripts/jquery-3.0.0.min.js"></script>
     <script src="../../Scripts/bootstrap.min.js"></script>
@@ -79,4 +90,4 @@
     <script src="../../Scripts/vfs_fonts.js"></script>
     <script src="../../Scripts/project.js"></script>
 </body>
-</html>
+</html>--%>

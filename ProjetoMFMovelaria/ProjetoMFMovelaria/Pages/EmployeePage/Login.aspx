@@ -13,30 +13,29 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="offset-md-4 col-md-4 caixa-texto-login">
-                
-                    <p class="text-center">Bem-vindo</p>
-                    <h3 class="text-center">Acesso administrativo</h3>
-                    <br />
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <asp:TextBox ID="txbUsuario" runat="server" placeholder="Nome do usuário" CssClass="form-control teste-opacidade"></asp:TextBox>
-                    </div>
-                    <br />
-                    <br />
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <asp:TextBox ID="txbSenha" runat="server" placeholder="Senha" type="password" CssClass="form-control teste-opacidade"></asp:TextBox>
-                    </div>
-                    <br />
-                    <asp:CheckBox ID="cbxSalvarSenha" runat="server" Text="Lembrar-me nesse computador" />
-                    <br />
 
-                    <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success offset-md-5 offset-sm-5 offset-5" OnClick="btnLogin_Click" />
-                    <br />
-                    <br />
-                    <asp:Label ID="lblMensagem" Text="" runat="server" CssClass=""></asp:Label>
-                    <div class="clearfix"></div>
-               
+                <p class="text-center">Bem-vindo</p>
+                <h3 class="text-center">Acesso administrativo</h3>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <asp:TextBox ID="txbUsuario" runat="server" placeholder="Nome do usuário" CssClass="form-control teste-opacidade"></asp:TextBox>
+                </div>
+                <br />
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <asp:TextBox ID="txbSenha" runat="server" placeholder="Senha" type="password" CssClass="form-control teste-opacidade"></asp:TextBox>
+                </div>
+                <br />
+                <asp:CheckBox ID="cbxSalvarSenha" runat="server" Text="Lembrar-me nesse computador" />
+                <br />
+
+                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success offset-md-5 offset-sm-5 offset-5" OnClick="btnLogin_Click" />
+                <br />
+                <br />
+                <asp:Label ID="lblMensagem" Text="" runat="server" CssClass=""></asp:Label>
+                <div class="clearfix"></div>
             </div>
         </div>
     </form>

@@ -17,7 +17,7 @@
     <form id="form1" runat="server">
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">MF Movelaria</a>
+                <asp:HyperLink ID="HyperLink1" CssClass="navbar-brand text-white" runat="server" NavigateUrl="~/Pages/EmployeePage/Home.aspx">MF Movelaria</asp:HyperLink>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -26,8 +26,7 @@
                     <ul class="navbar-nav mr-auto">
                         <%-- Dropdown itens que chamam as paginas --%>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user-tag"></i>Fornecedor
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fornecedor
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <asp:HyperLink ID="hlkRegisterSupplier" CssClass="dropdown-item " runat="server" Text="Cadastrar fornecedor" NavigateUrl="~/Pages/SupplierPages/Register.aspx">
@@ -39,15 +38,23 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <asp:Label ID="lblName" CssClass="disabled" runat="server" Text=""> </asp:Label><i class="fas fa-cog"></i>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Orçamento
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                </i><asp:LinkButton ID="lkbSair" CssClass="dropdown-item" runat="server" Text="Sair" OnClick="lkbSair_Click">Sair</asp:LinkButton>
+                                <asp:HyperLink ID="HyperLink2" CssClass="dropdown-item" runat="server" NavigateUrl="~/Pages/BudgetPages/ToListBudget.aspx" Text="Listar orçamentos">
+                                    <i class="fas fa-list-alt"></i> Listar fornecedores
+                                </asp:HyperLink>
                             </div>
                         </li>
-                        <li class="nav-item text-white my-2 my-lg-0"></li>
-                        <li class="nav-item my-2 my-lg-0"></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-cog"></i><span></span>
+                                <asp:Label ID="lblName" CssClass="disabled" runat="server" Text=""> </asp:Label>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <asp:LinkButton ID="lkbSair" CssClass="dropdown-item" runat="server" Text="Sair" OnClick="lkbSair_Click">Sair</asp:LinkButton>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </nav>

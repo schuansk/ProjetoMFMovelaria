@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ToList.aspx.cs" Inherits="ProjetoMFMovelaria.Pages.RequestItemPages.ToList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ToList.aspx.cs"
+    Inherits="ProjetoMFMovelaria.Pages.RequestItemPages.ToList" %>
 
 <!DOCTYPE html>
 
@@ -12,10 +13,10 @@
     <link href="../../Content/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container mt-4 mb-4">
-        <div class="row">
-            <div class="col">
-                <form id="form1" runat="server">
+    <form id="form1" runat="server">
+        <div class="container mt-4 mb-4">
+            <div class="row">
+                <div class="col">
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
@@ -35,20 +36,20 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-<script src="../../Scripts/jquery-3.0.0.min.js"></script>
-<script src="../../Scripts/bootstrap.min.js"></script>
-<script src="../../Scripts/DataTables/jquery.dataTables.min.js"></script>
-<script src="../../Scripts/DataTables/dataTables.buttons.min.js"></script>
-<script src="../../Scripts/DataTables/buttons.flash.min.js"></script>
-<script src="../../Scripts/DataTables/buttons.html5.min.js"></script>
-<script src="../../Scripts/DataTables/buttons.colVis.min.js"></script>
-<script src="../../Scripts/jszip.min.js"></script>
-<script src="../../Scripts/pdfmake.min.js"></script>
-<script src="../../Scripts/vfs_fonts.js"></script>
-<script src="../../Scripts/project.js"></script>
+    </form>
+    <script src="../../Scripts/jquery-3.0.0.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="../../Scripts/DataTables/dataTables.buttons.min.js"></script>
+    <script src="../../Scripts/DataTables/buttons.flash.min.js"></script>
+    <script src="../../Scripts/DataTables/buttons.html5.min.js"></script>
+    <script src="../../Scripts/DataTables/buttons.colVis.min.js"></script>
+    <script src="../../Scripts/jszip.min.js"></script>
+    <script src="../../Scripts/pdfmake.min.js"></script>
+    <script src="../../Scripts/vfs_fonts.js"></script>
+    <script src="../../Scripts/project.js"></script>
 </body>
 </html>
