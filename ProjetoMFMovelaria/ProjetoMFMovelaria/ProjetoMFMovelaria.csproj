@@ -240,7 +240,11 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+<<<<<<< Updated upstream
     <Content Include="Pages\BudgetPages\ToListBudget.aspx" />
+=======
+>>>>>>> Stashed changes
+    <Content Include="Pages\RequestItemPages\ToList.aspx" />
     <Content Include="Pages\StepPages\Register.aspx" />
     <Content Include="Pages\SupplierPages\Register.aspx" />
     <Content Include="Pages\SupplierPages\ToList.aspx" />
@@ -496,6 +500,7 @@
   <ItemGroup>
     <Compile Include="App_Code\Class\Budget.cs" />
     <Compile Include="App_Code\Class\PhoneNumber.cs" />
+    <Compile Include="App_Code\Class\RequestItem.cs" />
     <Compile Include="App_Code\Class\Step.cs" />
     <Compile Include="App_Code\Class\Supplier.cs" />
     <Compile Include="App_Code\Mapped.cs" />
@@ -503,6 +508,7 @@
     <Compile Include="App_Code\Persistence\BudgetBD.cs" />
     <Compile Include="App_Code\Persistence\ConnTestDB.cs" />
     <Compile Include="App_Code\Persistence\PhoneNumberDB.cs" />
+    <Compile Include="App_Code\Persistence\RequestItemBD.cs" />
     <Compile Include="App_Code\Persistence\StepBD.cs" />
     <Compile Include="App_Code\Persistence\SupplierDB.cs" />
     <Compile Include="Master\Main.Master.cs">
@@ -512,12 +518,22 @@
     <Compile Include="Master\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="Pages\BudgetPages\ToListBudget.aspx.cs">
       <DependentUpon>ToListBudget.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BudgetPages\ToListBudget.aspx.designer.cs">
       <DependentUpon>ToListBudget.aspx</DependentUpon>
+    </Compile>
+=======
+>>>>>>> Stashed changes
+    <Compile Include="Pages\RequestItemPages\ToList.aspx.cs">
+      <DependentUpon>ToList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RequestItemPages\ToList.aspx.designer.cs">
+      <DependentUpon>ToList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\StepPages\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
