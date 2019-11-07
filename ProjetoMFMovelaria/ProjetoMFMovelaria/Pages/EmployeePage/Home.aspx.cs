@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ProjetoMFMovelaria.App_Code.Class;
 using ProjetoMFMovelaria.App_Code.Persistence;
+using ProjetoMFMovelaria.App_Code.Class;
 
-namespace ProjetoMFMovelaria.Master
+namespace ProjetoMFMovelaria.Pages.EmployeePage
 {
-    public partial class Main : System.Web.UI.MasterPage
+    public partial class Home : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,14 +25,13 @@ namespace ProjetoMFMovelaria.Master
                 }
                 else
                 {
-                    lblName.Text = employee.Name;
+                    lblMensage.Text = "Bem-vindo, " + employee.Name;
                 }
             }
             else
             {
                 Response.Redirect("../ErrorPages/AccessDanied.aspx");
             }
-
         }
 
         private bool IsAdmin(int tipo)
@@ -44,14 +43,6 @@ namespace ProjetoMFMovelaria.Master
                 retorno = true;
             }
             return retorno;
-        }
-
-        protected void lkbSair_Click(object sender, EventArgs e)
-        {
-            Session.Abandon();
-            Session.Clear();
-            Session.RemoveAll();
-            Response.Redirect("../EmployeePage/Login.aspx");
         }
     }
 }

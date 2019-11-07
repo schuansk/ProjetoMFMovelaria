@@ -10,6 +10,7 @@
 <body>
     <div class="ml-4 mt-4">
 <form id="form1" runat="server">
+    <%-- Linha de comentario --%>
         <asp:Label ID="Label1" runat="server" Text="Cadastro para teste de conexão"></asp:Label>
         <br />
         <br />

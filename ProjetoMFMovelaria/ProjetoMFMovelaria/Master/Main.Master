@@ -38,6 +38,16 @@
                                 </asp:HyperLink>
                             </div>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <asp:Label ID="lblName" CssClass="disabled" runat="server" Text=""> </asp:Label><i class="fas fa-cog"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                </i><asp:LinkButton ID="lkbSair" CssClass="dropdown-item" runat="server" Text="Sair" OnClick="lkbSair_Click">Sair</asp:LinkButton>
+                            </div>
+                        </li>
+                        <li class="nav-item text-white my-2 my-lg-0"></li>
+                        <li class="nav-item my-2 my-lg-0"></li>
                     </ul>
                 </div>
             </nav>

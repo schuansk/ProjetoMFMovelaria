@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjetoMFMovelaria.Master {
+namespace ProjetoMFMovelaria.Pages.EmployeePage {
     
     
-    public partial class Main {
-        
-        /// <summary>
-        /// head control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+    public partial class Login {
         
         /// <summary>
         /// form1 control.
@@ -31,48 +22,48 @@ namespace ProjetoMFMovelaria.Master {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// hlkRegisterSupplier control.
+        /// txbUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlkRegisterSupplier;
+        protected global::System.Web.UI.WebControls.TextBox txbUsuario;
         
         /// <summary>
-        /// hlkToListSupplier control.
+        /// txbSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlkToListSupplier;
+        protected global::System.Web.UI.WebControls.TextBox txbSenha;
         
         /// <summary>
-        /// lblName control.
+        /// cbxSalvarSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
+        protected global::System.Web.UI.WebControls.CheckBox cbxSalvarSenha;
         
         /// <summary>
-        /// lkbSair control.
+        /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lkbSair;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// lblMensagem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label lblMensagem;
     }
 }
