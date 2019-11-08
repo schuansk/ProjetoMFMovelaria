@@ -245,6 +245,7 @@
     <Content Include="Images\man-user.png" />
     <Content Include="Images\man-user.svg" />
     <Content Include="Images\mflogo.png" />
+    <Content Include="Pages\BudgetPages\Default.aspx" />
     <Content Include="Pages\BudgetPages\ToListBudget.aspx" />
     <Content Include="Pages\EmployeePage\Home.aspx" />
     <Content Include="Pages\EmployeePage\Login.aspx" />
@@ -512,6 +513,7 @@
     <Compile Include="App_Code\Mapped.cs" />
     <Compile Include="App_Code\Class\ConnTest.cs" />
     <Compile Include="App_Code\Persistence\BudgetBD.cs" />
+    <Compile Include="App_Code\Persistence\BudgetItemBD.cs" />
     <Compile Include="App_Code\Persistence\ConnTestDB.cs" />
     <Compile Include="App_Code\Persistence\EmployeeDB.cs" />
     <Compile Include="App_Code\Persistence\PhoneNumberDB.cs" />
@@ -524,6 +526,13 @@
     </Compile>
     <Compile Include="Master\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BudgetPages\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BudgetPages\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BudgetPages\ToListBudget.aspx.cs">
       <DependentUpon>ToListBudget.aspx</DependentUpon>
@@ -612,6 +621,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\Util\" />
+    <Folder Include="ExcelFile\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

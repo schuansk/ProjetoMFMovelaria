@@ -12,20 +12,20 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
     public class BudgetBD
     {
         //INSERE UM NOVO ORCAMENTO NO BANCO DE DADOS
-        public bool Insert(Budget budget)
+        public bool Insert(DateTime data, string email, string total, int id)
         {
             System.Data.IDbConnection objConn;
             System.Data.IDbCommand objCommand;
 
-            string sql = "INSERT INTO orcamento(orc_data_inicio, orc_email, orc_total_orcamento, orc_ativo)" +
-                "VALUES (?start_date, ?email, ?total_budget, ?active);";
+            string sql = "INSERT INTO orcamento(orc_data_inicio, orc_email, orc_total_orcamento, fun_id)" +
+                "VALUES (?data, ?email, ?total, ?id);";
 
             objConn = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConn);
-            objCommand.Parameters.Add(Mapped.Parameter("?start_date", budget.StartDate));
-            objCommand.Parameters.Add(Mapped.Parameter("?email", budget.Email));
-            objCommand.Parameters.Add(Mapped.Parameter("?total_budget", budget.TotalBudget));
-            objCommand.Parameters.Add(Mapped.Parameter("?active", budget.Active));
+            objCommand.Parameters.Add(Mapped.Parameter("?data", data));
+            objCommand.Parameters.Add(Mapped.Parameter("?email", email));
+            objCommand.Parameters.Add(Mapped.Parameter("?total", total));
+            objCommand.Parameters.Add(Mapped.Parameter("?id", id));
 
             objCommand.ExecuteNonQuery();
 
