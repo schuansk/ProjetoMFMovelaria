@@ -20,6 +20,7 @@
                     </p>
                     <p class="h5 text-center text-success">
                         <asp:Label ID="lblMessage" runat="server"></asp:Label>
+                        <asp:Label ID="lblEtaId" runat="server"></asp:Label>
                     </p>
                 </div>
             </div>
@@ -49,7 +50,7 @@
                             </div>
                             <div class="row">
                                 <asp:Label ID="Label6" runat="server" Text="Etapa atual:" style="visibility:hidden;"></asp:Label>
-                                <asp:Label ID="lblEtapaAtual" runat="server" Text="Projeto" style="visibility: hidden;"></asp:Label>
+                                <%--<asp:Label ID="lblEtapaAtual" runat="server" Text="Projeto" style="visibility: hidden;"></asp:Label>--%>
                             </div>
                             <br />
                             <br />

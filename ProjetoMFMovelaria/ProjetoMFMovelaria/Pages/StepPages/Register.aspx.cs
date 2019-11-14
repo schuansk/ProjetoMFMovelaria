@@ -14,9 +14,13 @@ namespace ProjetoMFMovelaria.Pages.StepPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            urlStepHistory.Visible = false;
+            lblEtaId.Visible = false;
+
             int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
 
             loadBudgetFields(orcId);
+            loadPreviousStep(orcId);
         }
 
         protected void loadBudgetFields(int orcId)
@@ -36,6 +40,19 @@ namespace ProjetoMFMovelaria.Pages.StepPages
             else
             {
                 lblMessage.Visible = true;
+            }
+        }
+
+        protected void loadPreviousStep(int id)
+        {
+            StepBD stepBD = new StepBD();
+            Step step = stepBD.SelectPreviousStep(id);
+
+            if (step != null)
+            {
+                lblEtaId.Text = step.Id.ToString();
+                urlStepHistory.Visible = true;
+                //urlStepHistory.style = System.Drawing.  "visibility: visible";
             }
         }
 

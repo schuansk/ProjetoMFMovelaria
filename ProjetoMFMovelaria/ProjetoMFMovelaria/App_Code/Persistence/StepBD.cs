@@ -38,7 +38,31 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
         }
 
         //RETORNA UMA ETAPA CASO ELA EXISTA, PESQUISA BASEADA NO ID ETAPA
-        public Step SelectById(int id)
+        public DataSet SelectStepById(int id)
+        {
+            DataSet ds = new DataSet();
+
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+
+            objConn = Mapped.Connection();
+
+            objCommand = Mapped.Command("SELECT * FROM etapa WHERE eta_id = ?id", objConn);
+
+            objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+
+            objConn.Close();
+            objCommand.Dispose();
+            objConn.Dispose();
+
+            return ds;
+        }
+
+        public Step SelectPreviousStep(int id)
         {
             Step obj = null;
 
@@ -48,7 +72,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
 
             objConn = Mapped.Connection();
 
-            objCommand = Mapped.Command("SELECT * FROM etapa WHERE eta_id = ?id", objConn);
+            objCommand = Mapped.Command("SELECT * FROM etapa WHERE orc_id = ?id", objConn);
 
             objCommand.Parameters.Add(Mapped.Parameter("?id", id));
 
@@ -58,11 +82,6 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             {
                 obj = new Step();
                 obj.Id = Convert.ToInt32(objDataReader["eta_id"]);
-                obj.Name = Convert.ToString(objDataReader["eta_nome"]);
-                obj.StartDate = Convert.ToDateTime(objDataReader["eta_data_inicio"]);
-                obj.FinishDate = Convert.ToDateTime(objDataReader["eta_data_conclusao"]);
-                obj.OrcId = Convert.ToInt32(objDataReader["orc_id"]);
-                obj.Desc = Convert.ToString(objDataReader["eta_desc"]);
             }
 
             objDataReader.Close();

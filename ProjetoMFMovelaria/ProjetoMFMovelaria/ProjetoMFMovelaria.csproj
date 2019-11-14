@@ -251,6 +251,7 @@
     <Content Include="Pages\EmployeePage\Login.aspx" />
     <Content Include="Pages\ErrorPages\AccessDanied.aspx" />
     <Content Include="Pages\RequestItemPages\ToList.aspx" />
+    <Content Include="Pages\StepPages\History.aspx" />
     <Content Include="Pages\StepPages\Register.aspx" />
     <Content Include="Pages\SupplierPages\Register.aspx" />
     <Content Include="Pages\SupplierPages\ToList.aspx" />
@@ -568,6 +569,13 @@
     </Compile>
     <Compile Include="Pages\RequestItemPages\ToList.aspx.designer.cs">
       <DependentUpon>ToList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StepPages\History.aspx.cs">
+      <DependentUpon>History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\StepPages\History.aspx.designer.cs">
+      <DependentUpon>History.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\StepPages\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
