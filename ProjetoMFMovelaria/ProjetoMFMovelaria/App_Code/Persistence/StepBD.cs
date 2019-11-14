@@ -17,14 +17,14 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             System.Data.IDbConnection objConn;
             System.Data.IDbCommand objCommand;
 
-            string sql = "INSERT INTO etapa(eta_nome, eta_data_inicio, eta_data_conclusao, eta_orc_id, eta_desc)" +
-                "VALUES (?name, ?start_date, ?finish_date, ?orc_id, ?desc);";
+            string sql = "INSERT INTO etapa(eta_nome, eta_data_inicio, orc_id, eta_desc)" +
+                "VALUES (?name, ?start_date, ?orc_id, ?desc);";
 
             objConn = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConn);
             objCommand.Parameters.Add(Mapped.Parameter("?name", step.Name));
             objCommand.Parameters.Add(Mapped.Parameter("?start_date", step.StartDate));
-            objCommand.Parameters.Add(Mapped.Parameter("?finish_date", step.FinishDate));
+            //objCommand.Parameters.Add(Mapped.Parameter("?finish_date", step.FinishDate));
             objCommand.Parameters.Add(Mapped.Parameter("?orc_id", step.OrcId));
             objCommand.Parameters.Add(Mapped.Parameter("?desc", step.Desc));
 
@@ -61,7 +61,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
                 obj.Name = Convert.ToString(objDataReader["eta_nome"]);
                 obj.StartDate = Convert.ToDateTime(objDataReader["eta_data_inicio"]);
                 obj.FinishDate = Convert.ToDateTime(objDataReader["eta_data_conclusao"]);
-                obj.OrcId = Convert.ToInt32(objDataReader["eta_orc_id"]);
+                obj.OrcId = Convert.ToInt32(objDataReader["orc_id"]);
                 obj.Desc = Convert.ToString(objDataReader["eta_desc"]);
             }
 

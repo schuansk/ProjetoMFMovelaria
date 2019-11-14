@@ -49,9 +49,9 @@ namespace ProjetoMFMovelaria.Pages.StepPages
 
             step.Name = listEtapa.SelectedItem.Value;
             step.StartDate = today;
+            //step.FinishDate = Convert.ToDateTime(null);
             step.OrcId = Convert.ToInt32(lblOrcamento.Text);
             step.Desc = txtDescricao.Value;
-            step.FinishDate = Convert.ToDateTime(null);
 
             if (stepBD.Insert(step))
             {

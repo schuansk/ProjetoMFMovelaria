@@ -56,7 +56,7 @@
                             <div class="row">
                                 <b><asp:Label ID="Label7" runat="server" Text="Nova etapa:"></asp:Label></b>
                                 <asp:DropDownList ID="listEtapa" runat="server" width="100%">
-                                    <asp:ListItem>Selecione</asp:ListItem>
+                                    <asp:ListItem class="disabled">Selecione</asp:ListItem>
                                     <asp:ListItem>Aguardando material</asp:ListItem>
                                     <asp:ListItem>Corte</asp:ListItem>
                                     <asp:ListItem>Usinagem</asp:ListItem>
