@@ -53,7 +53,7 @@
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:LinkButton ID="btnEtapa" runat="server" CommandName="Etapa"
-                                                    CommandArgument='<%# Bind("orc_id")%>'>Etapa</asp:LinkButton>
+                                                    CommandArgument='<%#Bind("orc_id")%>'>Etapa</asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Cancelar orçamento">

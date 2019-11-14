@@ -68,6 +68,12 @@ namespace ProjetoMFMovelaria.Pages.BudgetPages
                     Response.Redirect(Request.RawUrl, false);
                 }
             }
+
+            if(e.CommandName == "Etapa")
+            {
+                string orc_id = e.CommandArgument.ToString();
+                Response.Redirect("http://localhost:54362/Pages/StepPages/Register.aspx?orc_id=" + orc_id);
+            }
         }
     }
 }

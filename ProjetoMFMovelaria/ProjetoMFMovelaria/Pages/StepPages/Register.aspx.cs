@@ -14,8 +14,7 @@ namespace ProjetoMFMovelaria.Pages.StepPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int orcId = 1;
-                //Convert.ToInt32(Request.QueryString["orc_id"]);
+            int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
 
             loadBudgetFields(orcId);
         }
