@@ -74,6 +74,12 @@ namespace ProjetoMFMovelaria.Pages.BudgetPages
                 string orc_id = e.CommandArgument.ToString();
                 Response.Redirect("http://localhost:54362/Pages/StepPages/Register.aspx?orc_id=" + orc_id);
             }
+
+            if(e.CommandName == "Pedido")
+            {
+                string orc_id = e.CommandArgument.ToString();
+                Response.Redirect("http://localhost:54362/Pages/OrderPages/ListOrders.aspx?orc_id=" + orc_id);
+            }
         }
     }
 }

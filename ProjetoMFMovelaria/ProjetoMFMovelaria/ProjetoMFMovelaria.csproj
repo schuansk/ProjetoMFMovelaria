@@ -510,6 +510,7 @@
   <ItemGroup>
     <Compile Include="App_Code\Class\Budget.cs" />
     <Compile Include="App_Code\Class\Employee.cs" />
+    <Compile Include="App_Code\Class\Order.cs" />
     <Compile Include="App_Code\Class\PhoneNumber.cs" />
     <Compile Include="App_Code\Class\RequestItem.cs" />
     <Compile Include="App_Code\Class\Step.cs" />
@@ -520,6 +521,7 @@
     <Compile Include="App_Code\Persistence\BudgetItemBD.cs" />
     <Compile Include="App_Code\Persistence\ConnTestDB.cs" />
     <Compile Include="App_Code\Persistence\EmployeeDB.cs" />
+    <Compile Include="App_Code\Persistence\OrderDB.cs" />
     <Compile Include="App_Code\Persistence\PhoneNumberDB.cs" />
     <Compile Include="App_Code\Persistence\RequestItemBD.cs" />
     <Compile Include="App_Code\Persistence\StepBD.cs" />
