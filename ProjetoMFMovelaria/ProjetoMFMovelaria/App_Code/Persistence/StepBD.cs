@@ -48,7 +48,8 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
 
             objConn = Mapped.Connection();
 
-            objCommand = Mapped.Command("SELECT * FROM etapa WHERE eta_id = ?id", objConn);
+            objCommand = Mapped.Command("SELECT* FROM etapa eta JOIN orcamento orc on orc.orc_id = eta.orc_id WHERE orc.orc_id = ?id", objConn);
+            
 
             objCommand.Parameters.Add(Mapped.Parameter("?id", id));
 

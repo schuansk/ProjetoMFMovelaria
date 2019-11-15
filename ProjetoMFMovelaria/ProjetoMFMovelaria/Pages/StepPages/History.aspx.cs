@@ -14,14 +14,14 @@ namespace ProjetoMFMovelaria.Pages.StepPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int etaId = Convert.ToInt32(Request.QueryString["eta_id"]);
-            LoadStepHistories(etaId);
+            int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
+            LoadStepHistories(orcId);
         }
 
-        protected void LoadStepHistories(int etaId)
+        protected void LoadStepHistories(int orcId)
         {
             StepBD stepBD = new StepBD();
-            DataSet ds = stepBD.SelectStepById(etaId);
+            DataSet ds = stepBD.SelectStepById(orcId);
 
             int count = ds.Tables[0].Rows.Count;
 

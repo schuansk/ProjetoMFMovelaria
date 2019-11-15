@@ -16,6 +16,10 @@
         <div class="container mt-4 mb-4">
             <div class="row">
                 <div class="col">
+                    <h1 class="text-center h1">
+                        <asp:Label ID="lblTitle" runat="server" Text="Etapas anteriores"></asp:Label>
+                    </h1>
+                    <br />
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
@@ -24,9 +28,9 @@
                                         <Columns>
                                             <asp:BoundField DataField="eta_id" HeaderText="#ID" />
                                             <asp:BoundField DataField="eta_nome" HeaderText="Etapa" />
-                                            <asp:BoundField DataField="eta_data_inicio" HeaderText="Data início" />
-                                            <asp:BoundField DataField="eta_data_conclusao" HeaderText="Data conclusão" />
-                                            <asp:BoundField DataField="orc_id" HeaderText="E-mail cliente" />
+                                            <asp:BoundField DataField="eta_data_inicio" HeaderText="Data início" DataFormatString="{0:d}" />
+                                            <asp:BoundField DataField="eta_data_conclusao" HeaderText="Data conclusão" DataFormatString="{0:d}" />
+                                            <asp:BoundField DataField="orc_email" HeaderText="E-mail cliente" />
                                             <asp:BoundField DataField="eta_desc" HeaderText="Descrição" />
                                             <%--<asp:BoundField DataField="pei_correto" HeaderText="Correto" />--%>
                                         </Columns>
