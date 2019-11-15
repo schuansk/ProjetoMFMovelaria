@@ -249,7 +249,10 @@
     <Content Include="Pages\BudgetPages\ToListBudget.aspx" />
     <Content Include="Pages\EmployeePage\Home.aspx" />
     <Content Include="Pages\EmployeePage\Login.aspx" />
+    <Content Include="Pages\EmployeePage\SendEmail.aspx" />
     <Content Include="Pages\ErrorPages\AccessDanied.aspx" />
+    <Content Include="Pages\OrderPages\ListOrders.aspx" />
+    <Content Include="Pages\OrderPages\NewRequest.aspx" />
     <Content Include="Pages\RequestItemPages\ToList.aspx" />
     <Content Include="Pages\StepPages\History.aspx" />
     <Content Include="Pages\StepPages\Register.aspx" />
@@ -556,12 +559,33 @@
     <Compile Include="Pages\EmployeePage\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EmployeePage\SendEmail.aspx.cs">
+      <DependentUpon>SendEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EmployeePage\SendEmail.aspx.designer.cs">
+      <DependentUpon>SendEmail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ErrorPages\AccessDanied.aspx.cs">
       <DependentUpon>AccessDanied.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\ErrorPages\AccessDanied.aspx.designer.cs">
       <DependentUpon>AccessDanied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrderPages\ListOrders.aspx.cs">
+      <DependentUpon>ListOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OrderPages\ListOrders.aspx.designer.cs">
+      <DependentUpon>ListOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrderPages\NewRequest.aspx.cs">
+      <DependentUpon>NewRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OrderPages\NewRequest.aspx.designer.cs">
+      <DependentUpon>NewRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RequestItemPages\ToList.aspx.cs">
       <DependentUpon>ToList.aspx</DependentUpon>
