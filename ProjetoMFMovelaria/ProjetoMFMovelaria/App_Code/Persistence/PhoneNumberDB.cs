@@ -16,7 +16,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             System.Data.IDbConnection objConn;
             System.Data.IDbCommand objCommand;
 
-            string sql = "INSERT INTO telefone_fornecedor(for_id, tel_number) VALUES (?idsupplier, ?number);";
+            string sql = "INSERT INTO telefone_fornecedor(for_id, tel_numero) VALUES (?idsupplier, ?number);";
 
             objConn = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConn);

@@ -73,6 +73,43 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             return obj;
         }
 
+        //RETORNA UM FORNECEDOR CASO ELE EXISTA, PESQUISA BASEADA NO ID
+        public Supplier SelectById(int id)
+        {
+            Supplier obj = null;
+
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataReader objDataReader;
+
+            objConn = Mapped.Connection();
+
+            objCommand = Mapped.Command("SELECT * FROM fornecedor WHERE for_id = ?id", objConn);
+
+            objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+
+            objDataReader = objCommand.ExecuteReader();
+
+            while (objDataReader.Read())
+            {
+                obj = new Supplier();
+                obj.Id = Convert.ToInt32(objDataReader["for_id"]);
+                obj.Name = Convert.ToString(objDataReader["for_nome"]);
+                obj.CNPJ = Convert.ToString(objDataReader["for_cnpj"]);
+                obj.Active = Convert.ToInt32(objDataReader["for_ativo"]);
+                obj.Email = Convert.ToString(objDataReader["for_email"]);
+            }
+
+            objDataReader.Close();
+            objConn.Close();
+
+            objCommand.Dispose();
+            objConn.Dispose();
+            objDataReader.Dispose();
+
+            return obj;
+        }
+
         //SELECIONA TODOS OS FORNECEDORES CADASTRADOS
         public DataSet SelectAll()
         {
@@ -93,6 +130,28 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             objConn.Dispose();
 
             return ds;
-        }        
+        }
+
+        //SELECIONA TODOS OS FORNECEDORES CADASTRADOS
+        public DataSet SelectAllActive()
+        {
+            DataSet ds = new DataSet();
+
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+
+            objConn = Mapped.Connection();
+            objCommand = Mapped.Command("SELECT * FROM fornecedor WHERE for_ativo = 1 ORDER BY for_nome;", objConn);
+
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+
+            objConn.Close();
+            objCommand.Dispose();
+            objConn.Dispose();
+
+            return ds;
+        }
     }
 }

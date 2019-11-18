@@ -14,8 +14,7 @@ namespace ProjetoMFMovelaria.Pages.RequestItemPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int pedId = 2;
-            //Convert.ToInt32(Request.QueryString["ped_id"]);
+            int pedId = Convert.ToInt32(Request.QueryString["ped_id"]);
             LoadRequestItems(pedId);
         }
 

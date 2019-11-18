@@ -13,6 +13,8 @@ $(document).ready(function () {
             element.mask("(99) 9999-99999");
         }
     });
+    $('.money2').mask("#.##0,00", { reverse: true });
+    $('.number').mask("000");
 
     function CheckListCheckOnlyOne(chk) {
         var chkList = $(chk).parents('table').find('input[type=checkbox]');
@@ -32,7 +34,7 @@ $(document).ready(function () {
 
 // JS TELA DE LISTAR FORNECEDORES
 $(document).ready(function () {
-    $('#gdvRequestItems').DataTable({
+    $('.gdvRequestItems').DataTable({
         paging: true,
         searching: true,
         ordering: true,
@@ -78,9 +80,10 @@ $(document).ready(function () {
         "paging": true,
         "lengthChange": true,
         "searching": true,
-        "ordering": true,
+        "ordering": false,
         "info": true,
         "autoWidth": false,
+        "order": [[1, 'desc']],
 
         language: {
             sProcessing: "A processar...",
@@ -104,5 +107,14 @@ $(document).ready(function () {
                 copySuccess: { 1: "Copiado 1 linha para área de transferência", _: "Copiado %d linhas para área de transferência" }
             }
         }
+    });
+
+    $('.gdvItems').DataTable({
+        "paging": false,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": false,
+        "info": false,
+        "autoWidth": false
     });
 })

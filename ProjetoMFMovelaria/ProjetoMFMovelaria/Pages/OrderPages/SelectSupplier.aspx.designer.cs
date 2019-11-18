@@ -10,7 +10,7 @@
 namespace ProjetoMFMovelaria.Pages.OrderPages {
     
     
-    public partial class ListOrders {
+    public partial class SelectSupplier {
         
         /// <summary>
         /// lblTitle control.
@@ -22,48 +22,30 @@ namespace ProjetoMFMovelaria.Pages.OrderPages {
         protected global::System.Web.UI.WebControls.Label lblTitle;
         
         /// <summary>
-        /// lblBudget control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBudget;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// lblMessageSuccess control.
+        /// ddlSupplier control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessageSuccess;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSupplier;
         
         /// <summary>
-        /// lbtNewRequest control.
+        /// lkbNextPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtNewRequest;
-        
-        /// <summary>
-        /// lblNotFoundOrders control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNotFoundOrders;
-        
-        /// <summary>
-        /// gdvOrders control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gdvOrders;
+        protected global::System.Web.UI.WebControls.LinkButton lkbNextPage;
     }
 }

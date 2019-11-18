@@ -42,17 +42,24 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                 <asp:HyperLink ID="HyperLink2" CssClass="dropdown-item" runat="server" NavigateUrl="~/Pages/BudgetPages/ToListBudget.aspx" Text="Listar orçamentos">
-                                    <i class="fas fa-list-alt"></i> Listar fornecedores
+                                    <i class="fas fa-list-alt"></i> Listar orçamentos
                                 </asp:HyperLink>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="HyperLink3" CssClass="nav-link" runat="server" NavigateUrl="~/Pages/EmployeePage/SendEmail.aspx" Text="Enviar pedido">
+                                    <i class="fas fa-paper-plane"></i> Enviar pedido
+                            </asp:HyperLink>
+                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-cog"></i><span></span>
                                 <asp:Label ID="lblName" CssClass="disabled" runat="server" Text=""> </asp:Label>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <asp:LinkButton ID="lkbSair" CssClass="dropdown-item" runat="server" Text="Sair" OnClick="lkbSair_Click">Sair</asp:LinkButton>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                <asp:HyperLink ID="hlkExit" CssClass="dropdown-item" runat="server" NavigateUrl="~/Pages/EmployeePage/Exit.aspx" Text="Sair">
+                                    <i class="fas fa-sign-out-alt"></i> Sair
+                                </asp:HyperLink>
                             </div>
                         </li>
                     </ul>

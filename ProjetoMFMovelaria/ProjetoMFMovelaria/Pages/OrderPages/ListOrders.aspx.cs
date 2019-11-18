@@ -16,6 +16,13 @@ namespace ProjetoMFMovelaria.Pages.OrderPages
         {
             int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
 
+            bool success = Convert.ToBoolean(Request.QueryString["success"]);
+
+            if (success)
+            {
+                lblMessageSuccess.Text = "Pedido gerado com sucesso";
+            }
+
             lblBudget.Text = "Orçamento #" + orcId.ToString();
             CarryOrders(orcId);
         }
@@ -38,6 +45,21 @@ namespace ProjetoMFMovelaria.Pages.OrderPages
             {
                 lblNotFoundOrders.Visible = true;
             }
-        } 
+        }
+
+        protected void lbtNewRequest_Click(object sender, EventArgs e)
+        {
+            int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
+            Response.Redirect("SelectSupplier.aspx?orc_id=" + orcId);
+        }
+
+        protected void gdvOrders_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Itens")
+            {
+                string ped_id = e.CommandArgument.ToString();
+                Response.Redirect("../RequestItemPages/ToList.aspx?ped_id=" + ped_id);
+            }
+        }
     }
 }

@@ -45,13 +45,5 @@ namespace ProjetoMFMovelaria.Master
             }
             return retorno;
         }
-
-        protected void lkbSair_Click(object sender, EventArgs e)
-        {
-            Session.Abandon();
-            Session.Clear();
-            Session.RemoveAll();
-            Response.Redirect("../EmployeePage/Login.aspx");
-        }
     }
 }

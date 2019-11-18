@@ -13,11 +13,15 @@
                     <asp:Label ID="lblTitle" runat="server" Text="Pedido(s) do"></asp:Label>
                     <asp:Label ID="lblBudget" runat="server" Text=""></asp:Label>
                 </h1>
+
+                <h1 class="text-center h4 text-success">
+                    <asp:Label ID="lblMessageSuccess" runat="server" Text=""></asp:Label>
+                </h1>
                 <p class="text-center h1">
-                    <asp:HyperLink ID="hlkToList" CssClass="btn btn-info btn-sm" runat="server" NavigateUrl="~/Pages/OrderPages/NewRequest.aspx">Novo pedido</asp:HyperLink>
+                    <asp:LinkButton ID="lbtNewRequest" CssClass="btn btn-info" runat="server" OnClick="lbtNewRequest_Click">Adicionar pedido</asp:LinkButton>
                 </p>
                 <p class="text-center h4">
-                    <asp:Label ID="lblNotFoundOrders" runat="server" Enabled="False" ForeColor="#666666" Text="Ainda não há pedidos para esse orçamento" Visible="False"></asp:Label>
+                    <asp:Label ID="lblNotFoundOrders" runat="server" Enabled="False" ForeColor="#666666" Text="Ainda não há pedidos para esse orçamento." Visible="False"></asp:Label>
                 </p>
             </div>
         </div>
@@ -28,11 +32,17 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="table-responsive">
-                                <asp:GridView ID="gdvOrders" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False">
+                                <asp:GridView ID="gdvOrders" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False" OnRowCommand="gdvOrders_RowCommand">
                                     <Columns>
                                         <asp:BoundField DataField="ped_id" HeaderText="Id" />
                                         <asp:BoundField DataField="ped_data" HeaderText="Data" DataFormatString="{0:d}"/>
                                         <asp:BoundField DataField="for_nome" HeaderText="Fornecedor" />
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="btnItens" runat="server" CommandName="Itens"
+                                                    CommandArgument='<%#Bind("ped_id")%>'>Visualizar itens</asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
                             </div>

@@ -17,8 +17,8 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             System.Data.IDbConnection objConn;
             System.Data.IDbCommand objCommand;
 
-            string sql = "INSERT INTO pedido_item(pei_descricao, pei_tipo, pei_quantidade, pei_preco, pei_ativo, ped_id)" +
-                "VALUES (?desc, ?type_of_item, ?qty, ?price, ?active, ?ped_id);";
+            string sql = "INSERT INTO pedido_item(pei_descricao, pei_tipo, pei_quantidade, pei_preco_uni, ped_id)" +
+                "VALUES (?desc, ?type_of_item, ?qty, ?price, ?ped_id);";
 
             objConn = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConn);
@@ -26,7 +26,6 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             objCommand.Parameters.Add(Mapped.Parameter("?type_of_item", requestItem.TypeOfItem));
             objCommand.Parameters.Add(Mapped.Parameter("?qty", requestItem.Qty));
             objCommand.Parameters.Add(Mapped.Parameter("?price", requestItem.Price));
-            objCommand.Parameters.Add(Mapped.Parameter("?active", requestItem.isActive));
             objCommand.Parameters.Add(Mapped.Parameter("?ped_id", requestItem.PedId));
 
             objCommand.ExecuteNonQuery();
@@ -38,7 +37,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             return true;
         }
 
-        //RETORNA UM ORCAMENTO CASO ELE EXISTA, PESQUISA BASEADA NO ORC_ID
+        //RETORNA UM PEDIDO CASO ELE EXISTA, PESQUISA BASEADA NO ORC_ID
         public DataSet SelectItemsById(int id)
         {
             DataSet ds = new DataSet();
