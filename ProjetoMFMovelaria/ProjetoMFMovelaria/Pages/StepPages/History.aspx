@@ -27,7 +27,7 @@
                                     <asp:GridView ID="gdvStepHistory" runat="server" AutoGenerateColumns="False" CssClass="table table-success table-hover">
                                         <Columns>
                                             <asp:BoundField DataField="eta_id" HeaderText="#ID" />
-                                            <asp:BoundField DataField="eta_nome" HeaderText="Etapa" />
+                                            <asp:BoundField DataField="etd_descricao" HeaderText="Etapa" />
                                             <asp:BoundField DataField="eta_data_inicio" HeaderText="Data início" DataFormatString="{0:d}" />
                                             <asp:BoundField DataField="eta_data_conclusao" HeaderText="Data conclusão" DataFormatString="{0:d}" />
                                             <asp:BoundField DataField="orc_email" HeaderText="E-mail cliente" />

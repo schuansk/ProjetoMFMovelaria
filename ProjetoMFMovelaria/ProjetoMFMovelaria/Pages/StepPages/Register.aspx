@@ -13,10 +13,11 @@
             <div class="row">
                 <div class="col">
                     <h1 class="text-center h1">
-                        <asp:Label ID="lblTitle" runat="server" Text="Cadastro de etapa"></asp:Label>
+                        &nbsp;<asp:Label ID="lblTitle" runat="server" Text="Cadastro de etapa"></asp:Label>
                     </h1>
                     <p class="text-center h1 text-white">
-                        <asp:HyperLink ID="urlStepHistory" CssClass="btn btn-info btn-sm" runat="server" NavigateUrl="#">Consultar etapas anteriores</asp:HyperLink>
+                        <%--<asp:HyperLink ID="urlStepHistory" CssClass="btn btn-info btn-sm" runat="server" NavigateUrl="#">Consultar etapas anteriores</asp:HyperLink>--%>
+                        <asp:LinkButton ID="urlStepHistory" CssClass="btn btn-info btn-sm" runat="server" OnClick="urlStepHistory_Click">Consultar etapas anteriores</asp:LinkButton>
                     </p>
                     <p class="h5 text-center text-success">
                         <asp:Label ID="lblMessage" runat="server"></asp:Label>
@@ -49,23 +50,30 @@
                                 <asp:Label ID="lblCliente" runat="server" Text="pessoa@pessoa.com"></asp:Label>
                             </div>
                             <div class="row">
-                                <asp:Label ID="Label6" runat="server" Text="Etapa atual:" style="visibility:hidden;"></asp:Label>
-                                <%--<asp:Label ID="lblEtapaAtual" runat="server" Text="Projeto" style="visibility: hidden;"></asp:Label>--%>
+                                <asp:Label ID="Label6" runat="server" Text="Etapa atual:"></asp:Label>
+                                <asp:Label ID="lblEtapaAtual" runat="server" Text="Projeto"></asp:Label>
                             </div>
-                            <br />
+                            <div class="row">
+                                <asp:Label ID="Label10" runat="server" Text="Data de conclusão do projeto:"></asp:Label>
+                                <asp:Label ID="lblDataConclusao" runat="server" Text="Projeto"></asp:Label>
+                            </div>
                             <br />
                             <div class="row">
                                 <b><asp:Label ID="Label7" runat="server" Text="Nova etapa:"></asp:Label></b>
                                 <asp:DropDownList ID="listEtapa" runat="server" width="100%">
-                                    <asp:ListItem class="disabled">Selecione</asp:ListItem>
+                                    <asp:ListItem>Selecione</asp:ListItem>
                                     <asp:ListItem>Aguardando material</asp:ListItem>
+                                    <asp:ListItem>Separação</asp:ListItem>
                                     <asp:ListItem>Corte</asp:ListItem>
                                     <asp:ListItem>Usinagem</asp:ListItem>
-                                    <asp:ListItem>Acabamento</asp:ListItem>
                                     <asp:ListItem>Montagem</asp:ListItem>
-                                    <asp:ListItem>Aguardando instalação</asp:ListItem>
+                                    <asp:ListItem>Aguardando entrega</asp:ListItem>
                                     <asp:ListItem>Entregue</asp:ListItem>
                                 </asp:DropDownList>
+                            </div>
+                            <div class="row">
+                                <asp:Label ID="Label9" runat="server" Text="Próxima etapa:"></asp:Label>
+                                <asp:Label ID="lblNextStep" runat="server"></asp:Label>
                             </div>
                             <br />
                             <div class="row">
@@ -75,6 +83,9 @@
                                 <textarea runat="server" id="txtDescricao" class="w-100" cols="20" name="S1" rows="2"></textarea>
                             </div>
                             <br />
+                            <div class="row">
+                                <asp:CheckBox ID="checkboxSendEmail" runat="server" Checked="True" Text="Deseja enviar e-mail sobre a etapa para o cliente?" />
+                            </div>
                             <div class="row">
                                 <asp:Button class="btn btn-success btn-block" ID="btnCadastrarEtapa" runat="server" Text="Cadastrar" OnClick="btnCadastrarEtapa_Click" />
                             </div>

@@ -12,10 +12,18 @@ namespace ProjetoMFMovelaria.Pages.StepPages
 {
     public partial class Register : System.Web.UI.Page
     {
+        int etapa_desc_id = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             urlStepHistory.Visible = false;
             lblEtaId.Visible = false;
+            lblEtapaAtual.Visible = false;
+            Label6.Visible = false;
+            Label9.Visible = false;
+            lblNextStep.Visible = false;
+            Label10.Visible = false;
+            lblDataConclusao.Visible = false;
 
             int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
 
@@ -51,7 +59,62 @@ namespace ProjetoMFMovelaria.Pages.StepPages
             if (step != null)
             {
                 lblEtaId.Text = step.Id.ToString();
+                lblEtapaAtual.Text = step.EtdDescricao.ToString();
+                if(step.EtdId <= 7  || step.EtdId > 1)
+                {
+                    Label9.Visible = true;
+                    lblNextStep.Visible = true;
+                    Label7.Visible = false;
+                    listEtapa.Visible = false;
+
+                    if(step.EtdId == 7)
+                    {
+                        lblDataConclusao.Text = step.FinishDate.ToString();
+                        Label10.Visible = true;
+                        lblDataConclusao.Visible = true;
+                        btnCadastrarEtapa.Visible = false;
+                        Label9.Visible = false;
+                        lblNextStep.Visible = false;
+                        Label8.Visible = false;
+                        txtDescricao.Visible = false;
+                        checkboxSendEmail.Visible = false;
+                    }
+
+                }
+
+                etapa_desc_id = step.EtdId + 1;
+
+                switch (etapa_desc_id)
+                {
+                    case 1:
+                        lblNextStep.Text = "Aguardando material";
+                        break;
+                    case 2:
+                        lblNextStep.Text = "Separação";
+                        break;
+                    case 3:
+                        lblNextStep.Text = "Corte";
+                        break;
+                    case 4:
+                        lblNextStep.Text = "Usinagem";
+                        break;
+                    case 5:
+                        lblNextStep.Text = "Montagem";
+                        break;
+                    case 6:
+                        lblNextStep.Text = "Aguardando entrega";
+                        break;
+                    case 7:
+                        lblNextStep.Text = "Entregue";
+                        break;
+                }
+
                 urlStepHistory.Visible = true;
+                Label6.Visible = true;
+                lblEtapaAtual.Visible = true;
+                //if (step.OrcId == budget.)
+                //btnCadastrarEtapa.Visible = false;
+
                 //urlStepHistory.style = System.Drawing.  "visibility: visible";
             }
         }
@@ -63,9 +126,46 @@ namespace ProjetoMFMovelaria.Pages.StepPages
 
             DateTime today = DateTime.Today;
 
-            step.Name = listEtapa.SelectedItem.Value;
+            switch (listEtapa.SelectedItem.Value)
+            {
+                case "Aguardando material":
+                    step.EtdId = 1;
+                    break;
+                case "Separação":
+                    step.EtdId = 2;
+                    break;
+                case "Corte":
+                    step.EtdId = 3;
+                    break;
+                case "Usinagem":
+                    step.EtdId = 4;
+                    break;
+                case "Montagem":
+                    step.EtdId = 5;
+                    break;
+                case "Aguardando entrega":
+                    step.EtdId = 6;
+                    break;
+                case "Entregue":
+                    step.EtdId = 7;
+                    break;
+            }
+
+            if (etapa_desc_id == 0)
+            {
+                etapa_desc_id = 1;
+            }
+
+            stepBD.UpdatePreviousStep(Convert.ToInt32(lblEtaId.Text)); //retorna um bool = true
+
+            step.EtdId = etapa_desc_id;
             step.StartDate = today;
-            //step.FinishDate = Convert.ToDateTime(null);
+
+            if (step.EtdId == 7)
+                step.FinishDate = Convert.ToDateTime(today);
+            else
+                step.FinishDate = Convert.ToDateTime(null);
+
             step.OrcId = Convert.ToInt32(lblOrcamento.Text);
             step.Desc = txtDescricao.Value;
 
@@ -91,6 +191,12 @@ namespace ProjetoMFMovelaria.Pages.StepPages
             }
 
             listEtapa.Items[0].Selected = true;
+        }
+
+        protected void urlStepHistory_Click(object sender, EventArgs e)
+        {
+            int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
+            Response.Redirect("History.aspx?orc_id=" + orcId);
         }
     }
 }

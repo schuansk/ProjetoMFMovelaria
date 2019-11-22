@@ -17,14 +17,14 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             System.Data.IDbConnection objConn;
             System.Data.IDbCommand objCommand;
 
-            string sql = "INSERT INTO etapa(eta_nome, eta_data_inicio, orc_id, eta_desc)" +
-                "VALUES (?name, ?start_date, ?orc_id, ?desc);";
+            string sql = "INSERT INTO etapa(etd_id, eta_data_inicio, eta_data_conclusao, orc_id, eta_desc)" +
+                "VALUES (?etd_id, ?start_date, ?finish_date, ?orc_id, ?desc);";
 
             objConn = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConn);
-            objCommand.Parameters.Add(Mapped.Parameter("?name", step.Name));
+            objCommand.Parameters.Add(Mapped.Parameter("?etd_id", step.EtdId));
             objCommand.Parameters.Add(Mapped.Parameter("?start_date", step.StartDate));
-            //objCommand.Parameters.Add(Mapped.Parameter("?finish_date", step.FinishDate));
+            objCommand.Parameters.Add(Mapped.Parameter("?finish_date", step.FinishDate));
             objCommand.Parameters.Add(Mapped.Parameter("?orc_id", step.OrcId));
             objCommand.Parameters.Add(Mapped.Parameter("?desc", step.Desc));
 
@@ -48,7 +48,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
 
             objConn = Mapped.Connection();
 
-            objCommand = Mapped.Command("SELECT* FROM etapa eta JOIN orcamento orc on orc.orc_id = eta.orc_id WHERE orc.orc_id = ?id", objConn);
+            objCommand = Mapped.Command("SELECT * FROM etapa eta JOIN orcamento orc on orc.orc_id = eta.orc_id JOIN etapa_descricao des on des.etd_id = eta.etd_id WHERE orc.orc_id = ?id", objConn);
             
 
             objCommand.Parameters.Add(Mapped.Parameter("?id", id));
@@ -63,6 +63,28 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             return ds;
         }
 
+        public bool UpdatePreviousStep(int etaId)
+        {
+            //Step obj = null;
+
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+
+            string sql = "UPDATE etapa SET eta_data_conclusao = now() WHERE eta_id= ?eta_id";
+
+            objConn = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConn);
+            objCommand.Parameters.Add(Mapped.Parameter("?eta_id", etaId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConn.Close();
+            objCommand.Dispose();
+            objConn.Dispose();
+
+            return true;
+        }
+
         public Step SelectPreviousStep(int id)
         {
             Step obj = null;
@@ -73,7 +95,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
 
             objConn = Mapped.Connection();
 
-            objCommand = Mapped.Command("SELECT * FROM etapa WHERE orc_id = ?id", objConn);
+            objCommand = Mapped.Command("select * from etapa eta join etapa_descricao des on des.etd_id = eta.etd_id where eta.orc_id=?id order by eta.etd_id desc limit 1", objConn);
 
             objCommand.Parameters.Add(Mapped.Parameter("?id", id));
 
@@ -83,6 +105,10 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             {
                 obj = new Step();
                 obj.Id = Convert.ToInt32(objDataReader["eta_id"]);
+                obj.EtdId = Convert.ToInt32(objDataReader["etd_id"]);
+                obj.OrcId = Convert.ToInt32(objDataReader["orc_id"]);
+                obj.EtdDescricao = Convert.ToString(objDataReader["etd_descricao"]);
+                obj.FinishDate = Convert.ToDateTime(objDataReader["eta_data_conclusao"]);
             }
 
             objDataReader.Close();
@@ -105,7 +131,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             System.Data.IDataAdapter objDataAdapter;
 
             objConn = Mapped.Connection();
-            objCommand = Mapped.Command("SELECT * FROM etapa ORDER BY eta_nome", objConn);
+            objCommand = Mapped.Command("SELECT * FROM etapa ORDER BY etd_id", objConn);
 
             objDataAdapter = Mapped.Adapter(objCommand);
             objDataAdapter.Fill(ds);
