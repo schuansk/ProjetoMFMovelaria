@@ -40,8 +40,8 @@ namespace ProjetoMFMovelaria.Pages.StepPages
             {
                 lblMessage.Visible = false;
                 lblOrcamento.Text = budget.Id.ToString();
-                lblDataInicio.Text = budget.StartDate.ToString();
-                lblTotal.Text = budget.TotalBudget.ToString();
+                lblDataInicio.Text = budget.StartDate.ToString("dd/MM/yyyy");
+                lblTotal.Text = ("R$" + budget.TotalBudget).ToString();
                 lblCliente.Text = budget.Email.ToString();
                 lblResponsavel.Text = budget.NameEmployee.ToString();
             }
@@ -67,11 +67,16 @@ namespace ProjetoMFMovelaria.Pages.StepPages
                     Label7.Visible = false;
                     listEtapa.Visible = false;
 
-                    if(step.EtdId == 7)
+                    bool statusOrcamento = checkBudgetStatus(step.OrcId);
+
+                    if(step.EtdId == 7 || statusOrcamento == false)
                     {
-                        lblDataConclusao.Text = step.FinishDate.ToString();
-                        Label10.Visible = true;
-                        lblDataConclusao.Visible = true;
+                        if(statusOrcamento == true)
+                        { 
+                            lblDataConclusao.Text = step.FinishDate.ToString("dd/MM/yyyy");
+                            Label10.Visible = true;
+                            lblDataConclusao.Visible = true;
+                        }
                         btnCadastrarEtapa.Visible = false;
                         Label9.Visible = false;
                         lblNextStep.Visible = false;
@@ -117,6 +122,21 @@ namespace ProjetoMFMovelaria.Pages.StepPages
 
                 //urlStepHistory.style = System.Drawing.  "visibility: visible";
             }
+        }
+
+        private bool checkBudgetStatus(int orcId)
+        {
+            BudgetBD budgetBD = new BudgetBD();
+
+            Budget budget = budgetBD.SelectById(orcId);
+
+            if (budget != null)
+            {                
+                return budget.Active;
+            }
+
+            return true;
+
         }
 
         protected void btnCadastrarEtapa_Click(object sender, EventArgs e)

@@ -34,28 +34,28 @@
                                 <asp:Label ID="lblOrcamento" CssClass="h4" runat="server" Text="#"></asp:Label>
                             </div>
                             <div class="row">
-                                <asp:Label ID="Label2" runat="server" Text="Data início: "></asp:Label>
-                                <asp:Label ID="lblDataInicio" runat="server" Text="24/07/1985"></asp:Label>
+                                <b><asp:Label ID="Label2" runat="server" Text="Data início: "></asp:Label></b>
+                                <asp:Label ID="lblDataInicio" runat="server"></asp:Label>
                             </div>
                             <div class="row">
-                                <asp:Label ID="Label3" runat="server" Text="Total orçamento: "></asp:Label>
-                                <asp:Label ID="lblTotal" runat="server" Text="$110"></asp:Label>
+                                <b><asp:Label ID="Label3" runat="server" Text="Total orçamento: "></asp:Label></b>
+                                <asp:Label ID="lblTotal" runat="server" Text="110"></asp:Label>
                             </div>
                             <div class="row">
-                                <asp:Label ID="Label4" runat="server" Text="Funcionário responsável: "></asp:Label>
+                                <b><asp:Label ID="Label4" runat="server" Text="Funcionário responsável: "></asp:Label></b>
                                 <asp:Label ID="lblResponsavel" runat="server" Text="Amanda"></asp:Label>
                             </div>
                             <div class="row">
-                                <asp:Label ID="Label5" runat="server" Text="Cliente: "></asp:Label>
+                                <b><asp:Label ID="Label5" runat="server" Text="Cliente: "></asp:Label></b>
                                 <asp:Label ID="lblCliente" runat="server" Text="pessoa@pessoa.com"></asp:Label>
                             </div>
                             <div class="row">
-                                <asp:Label ID="Label6" runat="server" Text="Etapa atual:"></asp:Label>
-                                <asp:Label ID="lblEtapaAtual" runat="server" Text="Projeto"></asp:Label>
+                                <b><asp:Label ID="Label10" runat="server" Text="Data de conclusão do projeto:"></asp:Label></b>
+                                <asp:Label ID="lblDataConclusao" runat="server" Text="Projeto" DataFormatString="{0:d}"></asp:Label>
                             </div>
                             <div class="row">
-                                <asp:Label ID="Label10" runat="server" Text="Data de conclusão do projeto:"></asp:Label>
-                                <asp:Label ID="lblDataConclusao" runat="server" Text="Projeto"></asp:Label>
+                                <b><asp:Label ID="Label6" runat="server" Text="Etapa atual:"></asp:Label></b>
+                                <asp:Label ID="lblEtapaAtual" runat="server" Text="Projeto" style="background-color:#4cff00; border-radius:5px;"></asp:Label>
                             </div>
                             <br />
                             <div class="row">

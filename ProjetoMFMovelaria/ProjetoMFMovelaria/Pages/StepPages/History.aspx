@@ -32,7 +32,6 @@
                                             <asp:BoundField DataField="eta_data_conclusao" HeaderText="Data conclusão" DataFormatString="{0:d}" />
                                             <asp:BoundField DataField="orc_email" HeaderText="E-mail cliente" />
                                             <asp:BoundField DataField="eta_desc" HeaderText="Descrição" />
-                                            <%--<asp:BoundField DataField="pei_correto" HeaderText="Correto" />--%>
                                         </Columns>
                                     </asp:GridView>
                                 </div>

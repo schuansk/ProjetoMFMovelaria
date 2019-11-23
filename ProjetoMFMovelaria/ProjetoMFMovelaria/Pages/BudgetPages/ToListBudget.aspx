@@ -45,26 +45,18 @@
                                 <asp:GridView ID="gdvBudget" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False" OnRowCommand="gdvOrc_RowCommand">
                                     <Columns>
                                         <asp:BoundField DataField="orc_id" HeaderText="ID" />
-                                        <asp:BoundField DataField="orc_data_inicio" HeaderText="Data de início" />
+                                        <asp:BoundField DataField="orc_data_inicio" HeaderText="Data de início" DataFormatString="{0:d}"/>
                                         <asp:BoundField DataField="orc_email" HeaderText="E-mail do cliente" />
-                                        <asp:BoundField DataField="orc_total_orcamento" HeaderText="Valor total" />
-                                        <asp:BoundField DataField="fun_id" HeaderText="Funcionário" />
+                                        <asp:BoundField DataField="orc_total_orcamento" HeaderText="Valor total" DataFormatString="R${0:N2}" />
+                                        <asp:BoundField DataField="fun_nome" HeaderText="Funcionário" />
                                         <asp:BoundField DataField="orc_ativo" HeaderText="Status" />
-                                        <asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Ações">
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="btnEtapa" runat="server" CommandName="Etapa"
+                                                <asp:LinkButton CssClass="btn btn-primary" ID="btnEtapa" runat="server" CommandName="Etapa"
                                                     CommandArgument='<%#Bind("orc_id")%>'>Etapa</asp:LinkButton>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField>
-                                            <ItemTemplate>
-                                                <asp:LinkButton ID="btnPedido" runat="server" CommandName="Pedido"
+                                                <asp:LinkButton CssClass="btn btn-success" ID="btnPedido" runat="server" CommandName="Pedido"
                                                     CommandArgument='<%#Bind("orc_id")%>'>Pedido</asp:LinkButton>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Cancelar orçamento">
-                                            <ItemTemplate>
-                                                <asp:Button ID="statSwitch" runat="server" Text="Cancelar"
+                                                <asp:Button CssClass="btn btn-danger" ID="statSwitch" runat="server" Text="Cancelar"
                                                     CommandName="Cancelar" CommandArgument='<%# Container.DataItemIndex %>'
                                                     OnClientClick="return confirm('Clique em OK apenas se tiver certeza de que deseja desativar este orcamento. Do contrario, clique em CANCELAR.');" />
                                             </ItemTemplate>

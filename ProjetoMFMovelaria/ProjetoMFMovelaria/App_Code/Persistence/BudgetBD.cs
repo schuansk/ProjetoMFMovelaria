@@ -84,7 +84,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             System.Data.IDataAdapter objDataAdapter;
 
             objConn = Mapped.Connection();
-            objCommand = Mapped.Command("SELECT * FROM orcamento", objConn);
+            objCommand = Mapped.Command("SELECT * FROM orcamento orc join funcionario fun on fun.fun_id = orc.fun_id", objConn);
 
             objDataAdapter = Mapped.Adapter(objCommand);
             objDataAdapter.Fill(ds);
