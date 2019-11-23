@@ -14,6 +14,10 @@ namespace ProjetoMFMovelaria.App_Code.Class
         public double Price { get; set; }
         public bool isActive { get; set; }
         public bool isCorrect { get; set; }
+        public int Wrong { get; set; }
+        public int Correct { get; set; }
         public int PedId { get; set; }
+        public int CurrentSupplier { get; set; }
+        public string SupName { get; set; }
     }
 }
