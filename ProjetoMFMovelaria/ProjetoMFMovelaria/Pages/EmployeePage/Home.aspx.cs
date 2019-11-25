@@ -12,8 +12,11 @@ namespace ProjetoMFMovelaria.Pages.EmployeePage
 {
     public partial class Home : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            Label2.Visible = false;
+            lblDiasAcumulados.Visible = false;
             if (Session["ID"] != null)
             {
                 int id = Convert.ToInt32(Session["ID"]);
@@ -28,12 +31,45 @@ namespace ProjetoMFMovelaria.Pages.EmployeePage
                 {
                     lblMensage.Text = "Bem-vindo, " + employee.Name;
                     LoadCharts();
+                    if (!Page.IsPostBack)
+                    {
+                        LoadFinishedBudgets();
+                        //possivel solucao eh chamar o metodo aqui e esquecer o botao, ai faz o post
+                    }
                 }
             }
             else
             {
                 Response.Redirect("../ErrorPages/AccessDanied.aspx");
             }
+        }
+
+        private void LoadLeadTimeKpi(int orcId)
+        {
+            StepBD stepBD = new StepBD();
+            DataSet ds = stepBD.SelectStepById(orcId);
+
+            int count = ds.Tables[0].Rows.Count;
+
+            if (count > 0)
+            {
+                gdvLeadTimeKpi.DataSource = ds.Tables[0].DefaultView;
+                gdvLeadTimeKpi.DataBind();
+                gdvLeadTimeKpi.HeaderRow.TableSection = TableRowSection.TableHeader;
+                //lblMessage.Visible = false;
+            }
+        }
+
+        private void LoadFinishedBudgets()
+        {
+            BudgetBD db = new BudgetBD();
+            DataSet ds = db.SelectAllFinished();
+
+            ddlFinishedBudgets.DataSource = ds.Tables[0].DefaultView;
+            ddlFinishedBudgets.DataTextField = "orc_id";
+            ddlFinishedBudgets.DataValueField = "orc_id";
+            ddlFinishedBudgets.DataBind();
+            ddlFinishedBudgets.Items.Insert(0, "Selecione");
         }
 
         private bool IsAdmin(int tipo)
@@ -91,8 +127,41 @@ namespace ProjetoMFMovelaria.Pages.EmployeePage
                     throw;
                 }
             }
+        }
 
+        protected void btnFinishedBudget_Click(object sender, EventArgs e)
+        {
+            string orcamento_id = ddlFinishedBudgets.SelectedItem.Value;
+            //vai entrar no metodo do botao
+            if (orcamento_id != "Selecione")
+            {
+                //LoadLeadTimeKpi(Convert.ToInt32(orcamento_id));
+                BudgetBD budgetBD = new BudgetBD();
+                DataSet ds = budgetBD.SelectPreviousFinishedBudget(Convert.ToInt32(orcamento_id));
 
+                int count = ds.Tables[0].Rows.Count;
+
+                if (count > 0)
+                {
+                    gdvLeadTimeKpi.DataSource = ds.Tables[0].DefaultView;
+                    gdvLeadTimeKpi.DataBind();
+                    gdvLeadTimeKpi.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    //lblMessage.Visible = false;
+                }
+
+                FinishedBudget start = budgetBD.SelectStartDateById(Convert.ToInt32(orcamento_id));
+                FinishedBudget end = budgetBD.SelectEndDateById(Convert.ToInt32(orcamento_id));
+
+                double diasAcumulados = (end.FinishedDate - start.StartDate).TotalDays;
+
+                Label2.Visible = true;
+                lblDiasAcumulados.Visible = true;
+                lblDiasAcumulados.Text = "&nbsp" + Convert.ToString(diasAcumulados);
+            }
+            else
+            {
+                gdvLeadTimeKpi.Visible = false;
+            }
         }
     }
 }

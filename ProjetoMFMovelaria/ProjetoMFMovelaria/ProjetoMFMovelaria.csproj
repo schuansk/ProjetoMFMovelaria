@@ -513,6 +513,7 @@
     <Compile Include="App_Code\Class\Budget.cs" />
     <Compile Include="App_Code\Class\BudgetItem.cs" />
     <Compile Include="App_Code\Class\Employee.cs" />
+    <Compile Include="App_Code\Class\FinishedBudget.cs" />
     <Compile Include="App_Code\Class\Order.cs" />
     <Compile Include="App_Code\Class\PhoneNumber.cs" />
     <Compile Include="App_Code\Class\RequestItem.cs" />

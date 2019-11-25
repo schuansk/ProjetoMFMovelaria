@@ -74,6 +74,144 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             return obj;
         }
 
+        //SELECIONA OS ORCAMENTOS QUE FORAM FINALIZADOS
+        public DataSet SelectAllFinished()
+        {
+            DataSet ds = new DataSet();
+
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+
+            objConn = Mapped.Connection();
+            objCommand = Mapped.Command("SELECT * FROM orcamento orc join etapa eta on eta.orc_id = orc.orc_id WHERE orc.orc_ativo = 1 && eta.etd_id = 7 ORDER BY orc.orc_id;", objConn);
+
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+
+            objConn.Close();
+            objCommand.Dispose();
+            objConn.Dispose();
+
+            return ds;
+        }
+
+        public FinishedBudget SelectStartDateById(int id)
+        {
+            FinishedBudget obj = null;
+
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataReader objDataReader;
+
+            objConn = Mapped.Connection();
+
+            objCommand = Mapped.Command("select * from orcamento orc join etapa eta on eta.orc_id = orc.orc_id join etapa_descricao des on des.etd_id = eta.etd_id where orc.orc_id = ?id order by eta.etd_id asc limit 1", objConn);
+
+            objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+
+            objDataReader = objCommand.ExecuteReader();
+
+            while (objDataReader.Read())
+            {
+                obj = new FinishedBudget();
+                obj.StartDate = Convert.ToDateTime(objDataReader["eta_data_inicio"]);
+            }
+
+            objDataReader.Close();
+            objConn.Close();
+
+            objCommand.Dispose();
+            objConn.Dispose();
+            objDataReader.Dispose();
+
+            return obj;
+        }
+
+        public FinishedBudget SelectEndDateById(int id)
+        {
+            FinishedBudget obj = null;
+
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataReader objDataReader;
+
+            objConn = Mapped.Connection();
+
+            objCommand = Mapped.Command("select * from orcamento orc join etapa eta on eta.orc_id = orc.orc_id join etapa_descricao des on des.etd_id = eta.etd_id where orc.orc_id = ?id order by eta.etd_id desc limit 1", objConn);
+
+            objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+
+            objDataReader = objCommand.ExecuteReader();
+
+            while (objDataReader.Read())
+            {
+                obj = new FinishedBudget();
+                obj.FinishedDate = Convert.ToDateTime(objDataReader["eta_data_conclusao"]);
+            }
+
+            objDataReader.Close();
+            objConn.Close();
+
+            objCommand.Dispose();
+            objConn.Dispose();
+            objDataReader.Dispose();
+
+            return obj;
+        }
+
+        public DataSet SelectPreviousFinishedBudget(int id)
+        {
+            //FinishedBudget obj = null;
+
+            //System.Data.IDbConnection objConn;
+            //System.Data.IDbCommand objCommand;
+            //System.Data.IDataReader objDataReader;
+
+            //objConn = Mapped.Connection();
+            DataSet ds = new DataSet();
+
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+
+            objConn = Mapped.Connection();
+
+            objCommand = Mapped.Command("select * from orcamento orc join etapa eta on eta.orc_id = orc.orc_id join etapa_descricao des on des.etd_id = eta.etd_id where orc.orc_id = ?id", objConn); // where eta.orc_id=?id order by eta.etd_id desc limit 1
+
+            objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+
+            //objDataReader = objCommand.ExecuteReader();
+
+            //while (objDataReader.Read())
+            //{
+            //    obj = new FinishedBudget();
+            //    obj.Id = Convert.ToInt32(objDataReader["orc_id"]);
+            //    obj.Active = Convert.ToBoolean(objDataReader["orc_ativo"]);
+            //    obj.StepId.Add(Convert.ToInt32(objDataReader["eta_id"]));
+            //    obj.StartDate.Add(Convert.ToDateTime(objDataReader["eta_data_inicio"]));
+            //    obj.FinishedDate.Add(Convert.ToDateTime(objDataReader["eta_data_conclusao"]));
+            //    obj.StepDescription.Add(Convert.ToString(objDataReader["etd_descricao"]));
+            //}
+
+            //objDataReader.Close();
+            //objConn.Close();
+
+            //objCommand.Dispose();
+            //objConn.Dispose();
+            //objDataReader.Dispose();
+
+            //return obj;
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+
+            objConn.Close();
+            objCommand.Dispose();
+            objConn.Dispose();
+
+            return ds;
+        }
+
         //SELECIONA TODOS OS ORCAMENTOS CADASTRADOS
         public DataSet SelectAll()
         {
