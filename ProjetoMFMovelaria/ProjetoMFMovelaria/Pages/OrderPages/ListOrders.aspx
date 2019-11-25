@@ -43,6 +43,12 @@
                                                     CommandArgument='<%#Bind("ped_id")%>'>Visualizar itens</asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="btnErros" runat="server" CommandName="Erros"
+                                                    CommandArgument='<%#Bind("ped_id")%>'>Cadastrar erros</asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
                             </div>

@@ -41,6 +41,10 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Orçamento
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <asp:HyperLink ID="HyperLink4" CssClass="dropdown-item" runat="server" NavigateUrl="~/Pages/BudgetPages/Default.aspx" Text="Upload planilha">
+                                    <i class="fas fa-list-alt"></i> Upload planilha
+                                </asp:HyperLink>
+                            
                                 <asp:HyperLink ID="HyperLink2" CssClass="dropdown-item" runat="server" NavigateUrl="~/Pages/BudgetPages/ToListBudget.aspx" Text="Listar orçamentos">
                                     <i class="fas fa-list-alt"></i> Listar orçamentos
                                 </asp:HyperLink>

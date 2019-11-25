@@ -256,6 +256,7 @@
     <Content Include="Pages\OrderPages\NewRequest.aspx" />
     <Content Include="Pages\OrderPages\SelectSupplier.aspx" />
     <Content Include="Pages\RequestItemPages\ToList.aspx" />
+    <Content Include="Pages\RequestItemPages\WrongRequest.aspx" />
     <Content Include="Pages\StepPages\History.aspx" />
     <Content Include="Pages\StepPages\Register.aspx" />
     <Content Include="Pages\SupplierPages\Register.aspx" />
@@ -613,6 +614,13 @@
     </Compile>
     <Compile Include="Pages\RequestItemPages\ToList.aspx.designer.cs">
       <DependentUpon>ToList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RequestItemPages\WrongRequest.aspx.cs">
+      <DependentUpon>WrongRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RequestItemPages\WrongRequest.aspx.designer.cs">
+      <DependentUpon>WrongRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\StepPages\History.aspx.cs">
       <DependentUpon>History.aspx</DependentUpon>

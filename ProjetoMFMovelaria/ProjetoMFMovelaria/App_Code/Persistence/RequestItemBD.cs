@@ -192,5 +192,54 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
 
             return ds;
         }
+
+        //select
+        public DataSet Select(int id)
+        {
+            DataSet ds = new DataSet();
+
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+
+            objConn = Mapped.Connection();
+            objCommand = Mapped.Command("SELECT pei.pei_id, pei.pei_descricao, pei.pei_quantidade, pei.pei_errado " +
+                "FROM pedido_item pei WHERE pei.ped_id = ?id;", objConn);
+
+            objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+
+            objConn.Close();
+            objCommand.Dispose();
+            objConn.Dispose();
+
+            return ds;
+        }
+
+        // ATUALUZADO O NUMERO DE ITENS ERRADOS DE UM PEDIDO_ITEM
+        public bool Update(int id, int wrong)
+        {
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+
+            string sql = "UPDATE pedido_item pei SET pei.pei_errado = ?wrong WHERE pei.pei_id = ?id;";
+
+            objConn = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConn);
+
+            objCommand.Parameters.Add(Mapped.Parameter("?wrong", wrong));
+            objCommand.Parameters.Add(Mapped.Parameter("?id", id));
+
+            objCommand.ExecuteNonQuery();
+
+            objConn.Close();
+            objCommand.Dispose();
+            objConn.Dispose();
+
+            return true;
+        }
+
     }
 }
