@@ -32,7 +32,7 @@
                     <td>
                         <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" OnClick="Button1_Click" Text="Upload" />
                         <br />
-                        <asp:Label ID="Label3" runat="server"></asp:Label>
+                       
                     </td>
                 </tr>
             </table>

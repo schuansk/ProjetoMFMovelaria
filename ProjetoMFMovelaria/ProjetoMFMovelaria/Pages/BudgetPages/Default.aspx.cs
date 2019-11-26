@@ -34,23 +34,52 @@ namespace ProjetoMFMovelaria.Pages.BudgetPages
             GridView1.DataSource = ds.Tables[0];
             GridView1.DataBind();
             mycon.Close();
-            Label3.Text = "Excel File Has Been Saved and Data Captured";
+           
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
+            int id = 0;
             BudgetBD orcamentobd = new BudgetBD();
-
-            for (int i = 0; i < GridView1.Rows.Count; i++)
+            if (Session["ID"] != null)
             {
-                orcamentobd.Insert(DateTime.Now, GridView1.Rows[i].Cells[0].Text, GridView1.Rows[i].Cells[1].Text, 1);
+                id = Convert.ToInt32(Session["ID"]);
+
             }
 
-            BudgetItemBD orcamentoItem = new BudgetItemBD();
-            for (int i = 0; i < GridView1.Rows.Count; i++)
-            {
-                orcamentoItem.Insert(GridView1.Rows[i].Cells[2].Text, GridView1.Rows[i].Cells[3].Text, GridView1.Rows[i].Cells[4].Text, GridView1.Rows[i].Cells[5].Text, 1, 4);
+            bool sucesso = true;
+
+            
+                if (orcamentobd.Insert(DateTime.Now, GridView1.Rows[0].Cells[0].Text, GridView1.Rows[0].Cells[1].Text, id))
+                {
+                    BudgetItemBD orcamentoItem = new BudgetItemBD();
+                    BudgetBD budget = new BudgetBD();
+                    int lastId = budget.SelectLastBudget();
+
+                    for (int j = 0; j < GridView1.Rows.Count; j++)
+                    {
+                        if (orcamentoItem.Insert(GridView1.Rows[j].Cells[2].Text, GridView1.Rows[j].Cells[3].Text, GridView1.Rows[j].Cells[4].Text, GridView1.Rows[j].Cells[5].Text, 1, lastId))
+                        {
+                            sucesso = true;
+                            
+                        }
+                        else
+                        {
+                            sucesso = false;
+                            
+                        }
+                    }
+                
+
+
             }
+
+
+            //for (int i = 0; i < GridView1.Rows.Count; i++)
+            //{
+
+            //}
+
         }
     }
 }

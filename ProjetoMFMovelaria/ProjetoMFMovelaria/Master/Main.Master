@@ -42,7 +42,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                 <asp:HyperLink ID="HyperLink4" CssClass="dropdown-item" runat="server" NavigateUrl="~/Pages/BudgetPages/Default.aspx" Text="Upload planilha">
-                                    <i class="fas fa-list-alt"></i> Upload planilha
+                                    <i class="fas fa-plus-circle""></i> Upload planilha
                                 </asp:HyperLink>
                             
                                 <asp:HyperLink ID="HyperLink2" CssClass="dropdown-item" runat="server" NavigateUrl="~/Pages/BudgetPages/ToListBudget.aspx" Text="Listar orçamentos">

@@ -251,5 +251,34 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
             return true;
         }
 
+        public int SelectLastBudget()
+        {
+            int last = 0;
+
+            System.Data.IDbConnection objConn;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataReader objDataReader;
+
+            objConn = Mapped.Connection();
+
+            objCommand = Mapped.Command("SELECT orc.orc_id FROM orcamento orc ORDER BY orc.orc_id DESC LIMIT 1;", objConn);
+
+            objDataReader = objCommand.ExecuteReader();
+
+            while (objDataReader.Read())
+            {
+                last = Convert.ToInt32(objDataReader["orc_id"]);
+            }
+
+            objDataReader.Close();
+            objConn.Close();
+
+            objCommand.Dispose();
+            objConn.Dispose();
+            objDataReader.Dispose();
+
+            return last;
+        }
+
     }
 }
