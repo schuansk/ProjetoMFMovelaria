@@ -31,11 +31,13 @@ namespace ProjetoMFMovelaria.Pages.EmployeePage
                 {
                     lblMensage.Text = "Bem-vindo, " + employee.Name;
                     LoadCharts();
-                    if (!Page.IsPostBack)
-                    {
+                    if (!Page.IsPostBack) { 
                         LoadFinishedBudgets();
-                        //possivel solucao eh chamar o metodo aqui e esquecer o botao, ai faz o post
+                        //string orcamento_id = ddlFinishedBudgets.SelectedItem.Value;
+                        //LoadLeadTimeKpi(orcamento_id);
                     }
+                    
+                    //possivel solucao eh chamar o metodo aqui e esquecer o botao, ai faz o post
                 }
             }
             else
@@ -44,19 +46,37 @@ namespace ProjetoMFMovelaria.Pages.EmployeePage
             }
         }
 
-        private void LoadLeadTimeKpi(int orcId)
+        private void LoadLeadTimeKpi(string orcId)
         {
-            StepBD stepBD = new StepBD();
-            DataSet ds = stepBD.SelectStepById(orcId);
-
-            int count = ds.Tables[0].Rows.Count;
-
-            if (count > 0)
+            //vai entrar no metodo do botao
+            if (orcId != "Selecione")
             {
-                gdvLeadTimeKpi.DataSource = ds.Tables[0].DefaultView;
-                gdvLeadTimeKpi.DataBind();
-                gdvLeadTimeKpi.HeaderRow.TableSection = TableRowSection.TableHeader;
-                //lblMessage.Visible = false;
+                //LoadLeadTimeKpi(Convert.ToInt32(orcamento_id));
+                BudgetBD budgetBD = new BudgetBD();
+                DataSet ds = budgetBD.SelectPreviousFinishedBudget(Convert.ToInt32(orcId));
+
+                int count = ds.Tables[0].Rows.Count;
+
+                if (count > 0)
+                {
+                    gdvLeadTimeKpi.DataSource = ds.Tables[0].DefaultView;
+                    gdvLeadTimeKpi.DataBind();
+                    gdvLeadTimeKpi.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    //lblMessage.Visible = false;
+                }
+
+                FinishedBudget start = budgetBD.SelectStartDateById(Convert.ToInt32(orcId));
+                FinishedBudget end = budgetBD.SelectEndDateById(Convert.ToInt32(orcId));
+
+                double diasAcumulados = (end.FinishedDate - start.StartDate).TotalDays;
+
+                Label2.Visible = true;
+                lblDiasAcumulados.Visible = true;
+                lblDiasAcumulados.Text = "&nbsp" + Convert.ToString(diasAcumulados);
+            }
+            else
+            {
+                gdvLeadTimeKpi.Visible = false;
             }
         }
 
@@ -135,6 +155,7 @@ namespace ProjetoMFMovelaria.Pages.EmployeePage
             //vai entrar no metodo do botao
             if (orcamento_id != "Selecione")
             {
+                gdvLeadTimeKpi.Visible = true;
                 //LoadLeadTimeKpi(Convert.ToInt32(orcamento_id));
                 BudgetBD budgetBD = new BudgetBD();
                 DataSet ds = budgetBD.SelectPreviousFinishedBudget(Convert.ToInt32(orcamento_id));

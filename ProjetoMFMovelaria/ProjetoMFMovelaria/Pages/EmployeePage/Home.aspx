@@ -86,9 +86,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-3 btn btn-success">
-                        <asp:Label class="h5" ID="Label2" runat="server" Text="Total de dias acumulados (início até a entrega):"></asp:Label>
-                        <b><asp:Label class="h5" ID="lblDiasAcumulados" runat="server" Text=""></asp:Label></b>
+                    <div class="row mt-3">
+                        <asp:Label class="h5 btn btn-success" ID="Label2" runat="server" Text="Total de dias acumulados (início até a entrega):"></asp:Label>
+                        <b><asp:Label class="h5 btn btn-success" ID="lblDiasAcumulados" runat="server" Text=""></asp:Label></b>
                     </div>
             </div>
         </div>
