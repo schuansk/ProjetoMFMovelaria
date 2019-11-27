@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjetoMFMovelaria.Pages.BudgetPages {
+namespace ProjetoMFMovelaria.Pages.RequestItemPages {
     
     
-    public partial class Default {
+    public partial class WrongRequest {
         
         /// <summary>
         /// lblTitle control.
@@ -22,39 +22,21 @@ namespace ProjetoMFMovelaria.Pages.BudgetPages {
         protected global::System.Web.UI.WebControls.Label lblTitle;
         
         /// <summary>
-        /// FileUpload1 control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// Button1 control.
+        /// gdvItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// GridView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// btnSalvar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvar;
+        protected global::System.Web.UI.WebControls.GridView gdvItems;
     }
 }

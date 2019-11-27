@@ -35,12 +35,14 @@
                                 <asp:GridView ID="gdvOrders" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False" OnRowCommand="gdvOrders_RowCommand">
                                     <Columns>
                                         <asp:BoundField DataField="ped_id" HeaderText="Id" />
-                                        <asp:BoundField DataField="ped_data" HeaderText="Data" DataFormatString="{0:d}"/>
+                                        <asp:BoundField DataField="ped_data" HeaderText="Data" DataFormatString="{0:d}" />
                                         <asp:BoundField DataField="for_nome" HeaderText="Fornecedor" />
-                                        <asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Ações">
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="btnItens" runat="server" CommandName="Itens"
+                                                <asp:LinkButton ID="btnItens" CssClass="btn btn-success" runat="server" CommandName="Itens"
                                                     CommandArgument='<%#Bind("ped_id")%>'>Visualizar itens</asp:LinkButton>
+                                                <asp:LinkButton ID="btnErros" CssClass="btn btn-danger" runat="server" CommandName="Erros"
+                                                    CommandArgument='<%#Bind("ped_id")%>'>Cadastrar erros</asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>

@@ -60,6 +60,12 @@ namespace ProjetoMFMovelaria.Pages.OrderPages
                 string ped_id = e.CommandArgument.ToString();
                 Response.Redirect("../RequestItemPages/ToList.aspx?ped_id=" + ped_id);
             }
+
+            if (e.CommandName == "Erros")
+            {
+                string ped_id = e.CommandArgument.ToString();
+                Response.Redirect("../RequestItemPages/WrongRequest.aspx?ped_id=" + ped_id);
+            }
         }
     }
 }

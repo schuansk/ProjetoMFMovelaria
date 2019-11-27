@@ -178,7 +178,9 @@ namespace ProjetoMFMovelaria.Pages.StepPages
                 etapa_desc_id = 1;
             }
 
-            stepBD.UpdatePreviousStep(Convert.ToInt32(lblEtaId.Text)); //retorna um bool = true
+            if (etapa_desc_id > 1) { 
+                stepBD.UpdatePreviousStep(Convert.ToInt32(lblEtaId.Text)); //retorna um bool = true
+            }
 
             step.EtdId = etapa_desc_id;
             step.StartDate = today;
