@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using ProjetoMFMovelaria.App_Code.Class;
 using ProjetoMFMovelaria.App_Code.Persistence;
+using System.Net.Mail;
+using System.Net;
 
 namespace ProjetoMFMovelaria.Pages.StepPages
 {
@@ -60,7 +62,7 @@ namespace ProjetoMFMovelaria.Pages.StepPages
             {
                 lblEtaId.Text = step.Id.ToString();
                 lblEtapaAtual.Text = step.EtdDescricao.ToString();
-                if(step.EtdId <= 7  || step.EtdId > 1)
+                if (step.EtdId <= 7 || step.EtdId > 1)
                 {
                     Label9.Visible = true;
                     lblNextStep.Visible = true;
@@ -69,10 +71,10 @@ namespace ProjetoMFMovelaria.Pages.StepPages
 
                     bool statusOrcamento = checkBudgetStatus(step.OrcId);
 
-                    if(step.EtdId == 7 || statusOrcamento == false)
+                    if (step.EtdId == 7 || statusOrcamento == false)
                     {
-                        if(statusOrcamento == true)
-                        { 
+                        if (statusOrcamento == true)
+                        {
                             lblDataConclusao.Text = step.FinishDate.ToString("dd/MM/yyyy");
                             Label10.Visible = true;
                             lblDataConclusao.Visible = true;
@@ -131,7 +133,7 @@ namespace ProjetoMFMovelaria.Pages.StepPages
             Budget budget = budgetBD.SelectById(orcId);
 
             if (budget != null)
-            {                
+            {
                 return budget.Active;
             }
 
@@ -192,13 +194,18 @@ namespace ProjetoMFMovelaria.Pages.StepPages
             if (stepBD.Insert(step))
             {
                 lblMessage.Text = "Etapa cadastrada com sucesso.";
+
+                if (checkboxSendEmail.Checked)
+                {
+                    sendEmail();
+                }
                 Clear();
             }
             else
             {
                 lblMessage.Text = "Opa";
             }
-            
+
         }
 
         private void Clear()
@@ -217,6 +224,54 @@ namespace ProjetoMFMovelaria.Pages.StepPages
         {
             int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
             Response.Redirect("History.aspx?orc_id=" + orcId);
+        }
+        protected void sendEmail()
+        {
+            int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
+
+            BudgetBD bd = new BudgetBD();
+            Budget budget = bd.SelectById(orcId);
+
+            string etapa = null;
+            if (orcId == 1)
+            {
+                etapa = listEtapa.SelectedItem.Text;
+            }
+            else
+            {
+                etapa = lblNextStep.Text;
+            }
+            MailMessage mail = new MailMessage();
+
+            mail.From = new MailAddress("movelariamf@gmail.com", "MF Movelaria");
+            mail.To.Add(budget.Email);
+
+            mail.Subject = "Atualizaçao do projeto";
+            mail.IsBodyHtml = true;
+            mail.Body = "<h2>Ol&aacute;, querido criente!</h2>< p > belezinha ? &nbsp;</ p >" +
+                "< p > Seu lindo projeto, feito com amor est & aacute; na etapa de produ&ccedil; &atilde; o: "+etapa+" </ p >" +
+                "< p > Atenciosamente,</ p >< p > MF Movelaria </ p > ";
+
+
+            SmtpClient sc = new SmtpClient("smtp.gmail.com");
+            sc.Port = 587;
+
+            sc.EnableSsl = true;
+            sc.UseDefaultCredentials = false;
+            sc.Credentials = new NetworkCredential("movelariamf", "mf_moveis*2019");
+
+            try
+            {
+                sc.Send(mail);
+                lblMessage.CssClass = "text-success";
+                lblMessage.Text = "Pedido enviado com sucesso.";
+                Clear();
+            }
+            catch (Exception ex)
+            {
+                lblMessage.CssClass = "text-danger";
+                lblMessage.Text = "Erro ao enviar o e-mail.";
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SelectSupplier.aspx.cs"
-    Inherits="ProjetoMFMovelaria.Pages.OrderPages.SelectSupplier" Title="" MasterPageFile="~/Master/Main.Master" %>
+    Inherits="ProjetoMFMovelaria.Pages.OrderPages.SelectSupplier" Title="" MasterPageFile="~/Master/Master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

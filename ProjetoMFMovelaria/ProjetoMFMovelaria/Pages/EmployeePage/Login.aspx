@@ -14,18 +14,30 @@
         <div class="container">
             <div class="offset-md-4 col-md-4 caixa-texto-login">
 
-                <p class="text-center">Bem-vindo</p>
-                <h3 class="text-center">Acesso administrativo</h3>
+                <h2 class="text-center">Bem-vindo</h2>
+                <h1 class="text-center">Acesso administrativo</h1>
                 <br />
-                <div class="input-group">
+                <%--<div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <asp:TextBox ID="txbUsuario" runat="server" placeholder="Nome do usuário" CssClass="form-control teste-opacidade"></asp:TextBox>
+                    <asp:TextBox ID="txbUsuario" runat="server" placeholder="Nome do usuário" CssClass="form-control"></asp:TextBox>
+                </div>--%>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">E-mail</span>
+                    </div>
+                     <asp:TextBox ID="txbUsuario" runat="server" placeholder="Insira seu e-mail" CssClass="form-control"></asp:TextBox>
                 </div>
                 <br />
                 <br />
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <asp:TextBox ID="txbSenha" runat="server" placeholder="Senha" type="password" CssClass="form-control teste-opacidade"></asp:TextBox>
+                <%--<div class="input-group">
+                    <span class="input-group-addon icone-input"><i class="glyphicon glyphicon-lock"></i></span>
+                    <asp:TextBox ID="txbSenha" runat="server" placeholder="Senha" type="password" CssClass="form-control"></asp:TextBox>
+                </div>--%>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">Senha</span>
+                    </div>
+                    <asp:TextBox ID="txbSenha" runat="server" placeholder="Insira sua senha" type="password" CssClass="form-control"></asp:TextBox>
                 </div>
                 <br />
                 <asp:CheckBox ID="cbxSalvarSenha" runat="server" Text="Lembrar-me nesse computador" />
@@ -40,7 +52,8 @@
         </div>
     </form>
     <script src="../../Scripts/jquery-3.0.0.slim.js"></script>
-    <script src="../../Scripts/bootstrap.js"></script>
     <script src="../../Scripts/popper.min.js"></script>
+    <script src="../../Scripts/bootstrap.js"></script>
+
 </body>
 </html>

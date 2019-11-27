@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ProjetoMFMovelaria.Pages.BudgetPages.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ProjetoMFMovelaria.Pages.BudgetPages.Default"  %>
 
 <!DOCTYPE html>
 

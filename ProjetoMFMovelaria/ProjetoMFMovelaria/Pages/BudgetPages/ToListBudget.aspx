@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ToListBudget.aspx.cs"
-    Inherits="ProjetoMFMovelaria.Pages.BudgetPages.ToListBudget" Title="" MasterPageFile="~/Master/Main.Master" %>
+    Inherits="ProjetoMFMovelaria.Pages.BudgetPages.ToListBudget" Title="" MasterPageFile="~/Master/Master.Master" %>
 
 <%--<!DOCTYPE html>
 
@@ -35,7 +35,7 @@
             </div>
         </div>
         <!-- Row: Conteúdo -->
-        <div class="row">
+        <div class="row col-lg-6">
             <div class="col">
 
                 <div class="container">

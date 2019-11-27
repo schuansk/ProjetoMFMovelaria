@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs"
-    Inherits="ProjetoMFMovelaria.Pages.EmployeePage.Home" Title="" MasterPageFile="~/Master/Main.Master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Master.Master" AutoEventWireup="true" CodeBehind="TESTE5.aspx.cs" Inherits="ProjetoMFMovelaria.Pages.EmployeePage.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- todo o código dentro do content "head" gera o gráfico -->

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SendEmail.aspx.cs"
-    Inherits="ProjetoMFMovelaria.Pages.EmployeePage.SendEmail" Title="" MasterPageFile="~/Master/Main.Master" %>
+    Inherits="ProjetoMFMovelaria.Pages.EmployeePage.SendEmail" Title="" MasterPageFile="~/Master/Master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
