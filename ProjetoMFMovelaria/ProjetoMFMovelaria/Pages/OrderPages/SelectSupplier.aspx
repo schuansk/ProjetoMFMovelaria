@@ -22,7 +22,7 @@
                 <div class="container">
                     <!-- Row: Selecionar fornecedor -->
                     <div class="row">
-                        <div class="col-12 col-lg-8 offset-lg-2">
+                        <div class="col-md-8 col-md-offset-2">
                             <asp:DropDownList ID="ddlSupplier" runat="server" Width="100%" Font-Size="Larger">
                             </asp:DropDownList>
                         </div>
@@ -30,7 +30,7 @@
                     <br />
                     <!-- Row: Botão próxima página -->
                     <div class="row">
-                        <div class="col-12 col-lg-8 offset-lg-2">
+                        <div class="col-md-8 col-md-offset-2">
                             <asp:LinkButton ID="lkbNextPage" CssClass="btn btn-success btn-sm" runat="server" OnClick="lkbNextPage_Click" Width="100%">Prosseguir</asp:LinkButton>
                         </div>
                     </div>

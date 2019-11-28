@@ -27,7 +27,7 @@
                 <div class="container">
                     <!-- Row: Seleção do item -->
                     <div class="row">
-                        <div class="col-12 col-lg-8 offset-lg-2">
+                        <div class="col-md-8 col-md-offset-2">
                             <asp:Label ID="Label3" runat="server" Text="Selecione o item:"></asp:Label>
                             <br />
                             <asp:DropDownList ID="ddlItem" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlItem_SelectedIndexChanged" Width="100%">
@@ -40,7 +40,7 @@
             </div>
             <!-- Row: total itens no orçamento e valor unitário-->
             <div class="row">
-                <div class="col-12 col-lg-8 offset-lg-2">
+                <div class="col-md-8 col-md-offset-2">
                     <div class="row">
                         <!-- Col: Total itens no orçamento -->
                         <div class="col-12 col-md-6">
@@ -59,7 +59,7 @@
             </div>
             <%-- Row: Quantidade precisa comprar e botão adicionar--%>
             <div class="row">
-                <div class="col-12 col-lg-8 offset-lg-2">
+                <div class="col-md-8 col-md-offset-2">
                     <div class="row">
                         <!-- Col: e quantidade precisa comprar -->
                         <div class="col-12 col-md-6">
@@ -79,7 +79,7 @@
 
             <%-- Row: Gridview --%>
             <div class="row">
-                <div class="col-12 col-lg-8 offset-lg-2">
+                <div class="col-md-8 col-md-offset-2">
                     <hr />
                     <p class="h5 text-center text-info">
                         <asp:Label ID="lblGdvItems" CssClass="" runat="server" Text=""></asp:Label>
@@ -93,7 +93,7 @@
             <br />
             <%-- Row: Botão salvar --%>
             <div class="row">
-                <div class="col-12 col-lg-8 offset-lg-2">
+                <div class="col-md-8 col-md-offset-2">
                     <asp:Button ID="btnSave" CssClass="btn btn-success btn-sm" runat="server" Text="Salvar" OnClick="btnSave_Click" Width="100%" Enabled="False" />
                 </div>
             </div>

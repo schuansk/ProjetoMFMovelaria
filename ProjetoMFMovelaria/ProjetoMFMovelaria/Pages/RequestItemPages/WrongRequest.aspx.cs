@@ -55,7 +55,7 @@ namespace ProjetoMFMovelaria.Pages.RequestItemPages
             // VERIFICA SE O NUMERO DE ERROS FOI ATUALIZADO COM SUCESSO
             if (db.Update(Convert.ToInt32(id.Text), Convert.ToInt32(wrong.Text)))
             {
-                lblMessage.Text = "sucesso";
+                //lblMessage.Text = "sucesso";
                 gdvItems.EditIndex = -1;
 
                 int idPed = Convert.ToInt32(Request.QueryString["ped_id"]);
@@ -63,7 +63,7 @@ namespace ProjetoMFMovelaria.Pages.RequestItemPages
             }
             else
             {
-                lblMessage.Text = "Erro";
+                //lblMessage.Text = "Erro";
             }
         }
 

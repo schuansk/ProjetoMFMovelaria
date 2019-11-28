@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WrongRequest.aspx.cs" Inherits="ProjetoMFMovelaria.Pages.RequestItemPages.WrongRequest"
-    Title="" MasterPageFile="~/Master/Main.Master" %>
+    Title="" MasterPageFile="~/Master/Master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -12,17 +12,15 @@
                 <h1 class="text-center h1">
                     <asp:Label ID="lblTitle" runat="server" Text="Pedidos com Erros"></asp:Label>
                 </h1>
-                <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
-
+                <%--<asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>--%>
             </div>
         </div>
         <!-- Row: Conteúdo -->
         <div class="row">
-
             <div class="col">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-md-10 col-md-offset-1">
                             <div class="table-responsive">
                                 <asp:GridView ID="gdvItems" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False" OnRowCancelingEdit="gdvItems_RowCancelingEdit" OnRowEditing="gdvItems_RowEditing" OnRowUpdating="gdvItems_RowUpdating">
                                     <Columns>

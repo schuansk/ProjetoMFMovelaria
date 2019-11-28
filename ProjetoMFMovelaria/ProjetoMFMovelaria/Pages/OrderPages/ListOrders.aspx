@@ -30,7 +30,7 @@
             <div class="col">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-md-10 col-md-offset-1">
                             <div class="table-responsive">
                                 <asp:GridView ID="gdvOrders" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False" OnRowCommand="gdvOrders_RowCommand">
                                     <Columns>

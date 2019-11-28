@@ -178,7 +178,8 @@ namespace ProjetoMFMovelaria.Pages.StepPages
                 etapa_desc_id = 1;
             }
 
-            if (etapa_desc_id > 1) { 
+            if (etapa_desc_id > 1)
+            {
                 stepBD.UpdatePreviousStep(Convert.ToInt32(lblEtaId.Text)); //retorna um bool = true
             }
 
@@ -250,9 +251,14 @@ namespace ProjetoMFMovelaria.Pages.StepPages
 
             mail.Subject = "Atualizaçao do projeto";
             mail.IsBodyHtml = true;
-            mail.Body = "<h2>Ol&aacute;, querido criente!</h2>< p > belezinha ? &nbsp;</ p >" +
-                "< p > Seu lindo projeto, feito com amor est & aacute; na etapa de produ&ccedil; &atilde; o: "+etapa+" </ p >" +
-                "< p > Atenciosamente,</ p >< p > MF Movelaria </ p > ";
+            mail.Body = "<h2>Ol&aacute;, querido cliente!</h2>" +
+                "<p>belezinha?</p>" +
+                "<p>Seu lindo projeto, feito com amor está na etapa de produção: " + etapa + "</p>" +
+                "<p><span style='font-size:12px'><span style='color:#000000'><span style='font-family:arial,helvetica,sans-serif'>Atenciosamente,</span></span></span></p>" +
+                "<p><span style='font-size:12px'><span style='color:#000000'><span style='font-family:arial,helvetica,sans-serif'>MF Movelaria.</span></span></span></p>" +
+                "<p style='text-align:center'><span style='font - size:12px'><span style='color:#000000'><span style='font-family:arial,helvetica,sans-serif'>Contato:</span></span></span></p>" +
+                "<div style='text-align: center;'><font color='#000000' face='arial, helvetica, sans-serif'><span style='font-size:12px'>(12) 3152-2515</span></font></div>" +
+                "<p style='text-align:center'><span style='font-size:12px'><span style='color:#000000'><span style='font-family:arial,helvetica,sans-serif'>Av. Gen. Eduardo Areco, 606 - Vila Geny, Lorena - SP, CEP: 12604-100</span></span></span></p>";
 
 
             SmtpClient sc = new SmtpClient("smtp.gmail.com");

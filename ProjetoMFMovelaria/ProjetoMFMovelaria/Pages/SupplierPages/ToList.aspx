@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Contant2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container mt-4 mb-4">
+    <div class="container">
         <!-- Row: Cabeçalho -->
         <div class="row">
             <div class="col">
@@ -25,7 +25,7 @@
             <div class="col">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-md-10 col-md-offset-1">
                             <div class="table-responsive">
                                 <asp:GridView ID="gdvSupplier" CssClass="table table-success table-hover defaulttable" runat="server" AutoGenerateColumns="False">
                                     <Columns>
@@ -42,4 +42,3 @@
         </div>
     </div>
 </asp:Content>
-

@@ -23,7 +23,7 @@
             <div class="container">
                 <!-- Row: Fornecedor -->
                 <div class="row">
-                    <div class="col-12 col-lg-8 offset-lg-2">
+                    <div class="col-md-8 col-md-offset-2">
                         <asp:Label ID="Label1" runat="server" Text="Selecione o fornecedor:"></asp:Label>
                         <br />
                         <asp:DropDownList ID="ddlSupplier" runat="server" Width="100%" AutoPostBack="True" OnSelectedIndexChanged="ddlSupplier_SelectedIndexChanged">
@@ -38,7 +38,7 @@
                 </div>
                 <!-- Row: Assunto -->
                 <div class="row">
-                    <div class="col-12 col-lg-8 offset-lg-2">
+                    <div class="col-md-8 col-md-offset-2">
                         <asp:Label ID="Label4" runat="server" Text="Assunto:"></asp:Label>
                         <asp:TextBox ID="txtsubject" runat="server" Width="100%"></asp:TextBox>
                     </div>
@@ -46,7 +46,7 @@
                 <!-- Row: Anexo -->
                 <br />
                 <div class="row">
-                    <div class="col-12 col-lg-8 offset-lg-2">
+                    <div class="col-md-8 col-md-offset-2">
                         <asp:Label ID="Label3" runat="server" Text="Anexo (clique no botão escolher arquivo ou arraste o arquivo até o botão):"></asp:Label>
                         <br />
                         <asp:FileUpload ID="fuAnexo" runat="server" Width="100%" />
@@ -57,7 +57,7 @@
                 <!-- Row: Botão enviar -->
                 <br />
                 <div class="row">
-                    <div class="col-12 col-lg-8 offset-lg-2">
+                    <div class="col-md-8 col-md-offset-2">
                         <asp:Button ID="btnSend" CssClass="btn btn-success btn-sm" runat="server" Text="Enviar" Width="100%" OnClick="btnSend_Click" />
                     </div>
                 </div>
