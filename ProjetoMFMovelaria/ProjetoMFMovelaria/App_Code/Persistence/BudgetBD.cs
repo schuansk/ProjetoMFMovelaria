@@ -177,7 +177,7 @@ namespace ProjetoMFMovelaria.App_Code.Persistence
 
             objConn = Mapped.Connection();
 
-            objCommand = Mapped.Command("select * from orcamento orc join etapa eta on eta.orc_id = orc.orc_id join etapa_descricao des on des.etd_id = eta.etd_id where orc.orc_id = ?id", objConn); // where eta.orc_id=?id order by eta.etd_id desc limit 1
+            objCommand = Mapped.Command("select DATEDIFF(eta.eta_data_conclusao,eta.eta_data_inicio) as eta_dias_acumulados, eta.*, orc.*,des.* from orcamento orc join etapa eta on eta.orc_id = orc.orc_id join etapa_descricao des on des.etd_id = eta.etd_id where orc.orc_id = ?id", objConn); // where eta.orc_id=?id order by eta.etd_id desc limit 1
 
             objCommand.Parameters.Add(Mapped.Parameter("?id", id));
 

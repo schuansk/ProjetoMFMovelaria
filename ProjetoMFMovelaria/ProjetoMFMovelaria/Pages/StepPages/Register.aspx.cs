@@ -200,7 +200,7 @@ namespace ProjetoMFMovelaria.Pages.StepPages
 
                 if (checkboxSendEmail.Checked)
                 {
-                    sendEmail();
+                    sendEmail(step.EtdId);
                 }
                 Clear();
             }
@@ -228,7 +228,7 @@ namespace ProjetoMFMovelaria.Pages.StepPages
             int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
             Response.Redirect("History.aspx?orc_id=" + orcId);
         }
-        protected void sendEmail()
+        protected void sendEmail(int etdId)
         {
             int orcId = Convert.ToInt32(Request.QueryString["orc_id"]);
 
@@ -236,7 +236,7 @@ namespace ProjetoMFMovelaria.Pages.StepPages
             Budget budget = bd.SelectById(orcId);
 
             string etapa = null;
-            if (orcId == 1)
+            if (etdId == 1)
             {
                 etapa = listEtapa.SelectedItem.Text;
             }

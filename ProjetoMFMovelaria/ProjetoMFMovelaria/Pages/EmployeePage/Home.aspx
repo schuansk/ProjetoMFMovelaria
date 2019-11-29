@@ -84,6 +84,7 @@
                                     <asp:BoundField DataField="etd_descricao" HeaderText="Etapa" />
                                     <asp:BoundField DataField="eta_data_inicio" HeaderText="Data início" DataFormatString="{0:d}" />
                                     <asp:BoundField DataField="eta_data_conclusao" HeaderText="Data conclusão" DataFormatString="{0:d}" />
+                                    <asp:BoundField DataField="eta_dias_acumulados" HeaderText="Dias acumulados" />
                                 </Columns>
                             </asp:GridView>
                         </div>
